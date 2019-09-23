@@ -1,0 +1,42 @@
+body				{
+							background-color: #D7D7D7;
+							background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
+							background-position: center center;
+							background-repeat: no-repeat;
+							background-attachment: fixed;
+							background-size: cover;
+						}
+
+a 					{
+						color: rgba(3, 3, 3, 0.59);
+}
+a:hover				{
+						text-decoration: none;
+}
+h1						{
+							position: absolute;
+							width: 250px;
+							height: 297px;
+							left: 31px;
+							top: 200px;
+							color: rgba(0, 0, 0, 0.51);
+}
+
+h5						{
+							position: absolute;
+							width: 280px;
+							height: 67px;
+							left: 31px;
+							top: 400px;
+							color: rgba(0, 0, 0, 0.51);
+}
+
+button					{
+							position: absolute; ;
+							width: 200px;
+							height: 65px;
+							left: 68px;
+							top: 460px;
+							background: #C4C4C4;
+							border-radius: 26px;
+}
