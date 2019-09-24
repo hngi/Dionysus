@@ -1,0 +1,33 @@
+body{
+	background-color:#696969;	
+}
+
+.subDiv{
+	margin-top: 12em;
+	align-content: center;
+}
+
+.fa-google-plus{
+	padding-left: 30px;
+
+}
+
+.fa-facebook-square{
+	padding-left: -40px;
+}
+
+.lastbtn{
+	float: right;
+	background-color: white;
+}
+
+.navbar-light .navbar-brand:hover{
+	color: blue;
+
+}
+
+
+.navbar-collapse:hover{
+	text-decoration: underline;
+	color: blue;
+}
