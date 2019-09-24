@@ -1,0 +1,122 @@
+
+html{
+    background: #d7d7d7;
+    height: 100%;
+}
+form{
+    float: left;
+}
+    body {
+        margin: 0;
+        padding: 0;
+        background: url("bgimage.png") no-repeat top center fixed;
+        background-size: 90%;
+       height: 100vh;
+        width: 100%;
+    }
+        h6{
+        color:  #5FB2FF;
+        }
+        button{
+            width: 80%;
+            background:  #5FB2FF ;
+            padding-right: 100px;
+            text-align: center;
+            height: 100px;
+            color: white;
+        }
+
+        
+        
+    .btn-primary{
+        background: #eeeeee;
+        padding: 15px; 
+        color: black;
+        cursor: pointer;
+        width: 80px;
+        
+    }
+   
+    .btn{
+        cursor: pointer;
+         
+    }
+    .img-logo{
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        font-size: 18px;
+    }
+    .nav{
+        
+        top: 8px;
+       float: right;
+       
+    }
+
+    .d-flex{
+        float: left;
+    }
+.space{
+    padding: 45px;
+}
+    .input_user,
+    .input_pass{
+        background: #eeeeee;
+    }
+    .user_card {
+        height: 400px;
+        width: 350px;
+        margin-bottom: auto;
+        position: absolute;
+        display: flex;
+        float: left;
+        flex-direction: column;
+        padding: 3px;
+        border-radius: 3px;
+       
+
+    }
+   
+    
+    .input{
+        width: 90%;
+    }
+    
+    .form_container {
+        margin-top: 80px;
+        
+    }
+    #login_btn {
+        width: 100%;
+        background: #5FB2FF !important;
+        color: white !important;
+    }
+    #login_btn:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+     .login_container {
+        padding: 0 2rem;
+    }
+    .input-group-text {
+        background: #5FB2FF !important;
+        color: white !important;
+        border: 0 !important;
+        border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+    .input_user,
+    .input_pass:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+     
+    }
+    .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+        background-color: #5FB2FF  !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+        #space-up{
+            padding: 200px;}
+      }
+   
