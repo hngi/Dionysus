@@ -1,0 +1,96 @@
+body{
+    background-color: #D7D7D7;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+.container-fluid{
+    background-color: #D7D7D7;
+    width: 1440px;
+    height: 1024px;
+}
+.navbar a{
+    color: rgba(3, 3, 3, 0.59);
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+/*.row{
+    background-color: #000000;
+}*/
+.col-5{
+    width: 609px;
+    height: 100vh;
+}
+.col-7{
+    background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+    background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
+}
+.col-sm-12 {
+    margin-top: 24px;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background-color: #EEEEEE;
+}
+form{
+    width: 400px;
+    margin: 10% auto;
+}
+.btn{
+font-style: normal;
+font-weight: bold;
+font-size: 24px !important;
+display: flex;
+align-items: center;
+text-align: center;
+color: #FFFFFF;
+}
+#signup{
+    margin-left: 25%;
+    width: 130px;
+    height: 42px;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #5CB0FF;
+    font-size: 18px !important;
+}
+#login{
+    margin-left: 5%;
+    border: none;
+    color:#ACA9A9;
+    width: 130px;
+    height: 42px;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    border-radius: 8px;
+}
+#login:hover{
+    color: #FFFFFF;
+}
+hr{
+    width: 160px;
+    background-color: black;
+    border: 1px solid #000000;
+    display: inline-block;
+    text-align: center;
+}
+.line{
+    display: inline;
+}
+.navbar li{
+    list-style: none;
+    padding-left: 2em;
+}
+.navbar ul{
+    margin-left: 63px;
+}
