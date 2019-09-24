@@ -42,20 +42,14 @@
 
             <div class="row">
                     <div class="col-sm-5 mb-4">
-                        <form class="col text-center"> 
-                            <div class="container">
-                                <div class="row">
-                                  <div class="col text-center">
-                                      <button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login">Login</button>
-                                      <button type="button" class="btn  btn-outline-primary col-sm-4 mb-4 btn-sm" id="signup" value="SignUp">SignUp</button>
-                                  </div>
-                                </div>
-                              </div>
-                            <input class="col-sm-10" type="text" placeholder="Username" title="Your Username" required>
-                            <input class="col-sm-10" type="email" placeholder="Email Address" title="Enter Your Email Address" required>
-                            <input class="col-sm-10" type="password" placeholder="Password" required>
-                            <input class="col-sm-10" type="password" placeholder="Confirm Password" required>
-                            <button type="button" class="btn btn-primary btn-sm col-sm-10 SignUp">Sign Up</button>
+                        <form class="col text-center" onsubmit="validate()"> 
+                            
+                            <input class="col-sm-10" type="text" placeholder="Username" title="Your Username" required><br/><br/>
+                            <input class="col-sm-10" type="email" placeholder="Email Address" title="Enter Your Email Address" required><br/><br/>
+                            <input class="col-sm-10" type="password" id="face" placeholder="Password" required><br/><br/>
+                            <input class="col-sm-10" type="password" id="show" placeholder="Confirm Password" required><br/>
+                            <span id="class">password must be the same</span><br/>
+                            <input type="submit" class="btn btn-primary btn-sm col-sm-10 SignUp" value="Sign Up">
                           </form>
 
                     </div>
@@ -63,6 +57,16 @@
                     
             </div>
         </div>
+         <script>
+                               function validate(){
+                    var m = document.getElementById('face');
+                    var n = document.getElementById('show');
+                    var p = document.getElementById('class');
+                        if (m != n || n != m){
+                            p.style.display = "block";
+                    }
+                  }
+        </script>
         
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
