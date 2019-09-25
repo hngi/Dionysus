@@ -1,3 +1,50 @@
+<?php 
+
+include('./includes/db/db_config.php');
+include('./includes/functions/functions.php');
+$errors = array();
+if(array_key_exists('submit', $_POST)){
+    
+    if(empty($_POST['name'])) {
+            $errors['name'] = "Please enter your full name";
+        }
+        
+
+        if(empty($_POST['email'])) {
+            $errors['email'] = "Please enter your email";
+        }
+
+       
+        if(doesEmailExist($conn, $_POST['email'])) {
+            $errors['email'] = "Email already exists";
+        }
+
+        if(empty($_POST['password'])) {
+            $errors['password'] = "Please enter your password";
+        }
+
+        if(empty($_POST['pword'])) {
+            $errors['pword'] = "Please confirm your password";
+        }
+
+        if($_POST['password'] != $_POST['pword']) {
+            $errors['pword'] = "Passwords do not match";
+        }
+
+        if(empty($errors)) {
+            
+            $clean = array_map('trim', $_POST);
+
+            doUserRegister($conn, $clean);
+
+            echo "Registration successful";
+        }
+    }
+
+ ?>
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -57,16 +104,42 @@
 
             <div class="row">
                     <div class="col-sm-5 mb-4">
+                        <form class="col text-center" action="" method="post"> 
+                            <div class="container">
+                                <div class="row">
+                                  <div class="col text-center">
 
-                        <form class="col text-center" onsubmit="validate()"> 
+                                   <!--     <button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login">Login</button>
+                                      <button type="button" class="btn  btn-outline-primary col-sm-4 mb-4 btn-sm" id="signup" value="SignUp"> SignUp</button> -->
+                                  </div>
+                                </div>
+                              </div>
+                              <?php 
+                            $data = displayErrors($errors, 'name');
+                            echo $data;
+                              ?>
+                            <input class="col-sm-10" type="text" placeholder="Full Name" title="Your Full Name" name="name">
+
+                            <?php 
+                            $data = displayErrors($errors, 'email');
+                            echo $data;
+                              ?>
+                            <input class="col-sm-10" type="email" placeholder="Email Address" title="Enter Your Email Address" name="email" >
+
+                            <?php 
+                            $data = displayErrors($errors, 'password');
+                            echo $data;
+                              ?>
+                            <input class="col-sm-10" type="password" placeholder="Password" name="password">
+
+                            <?php 
+                            $data = displayErrors($errors, 'pword');
+                            echo $data;
+                              ?>
+                            <input class="col-sm-10" type="password" placeholder="Confirm Password" name="pword">
+
+                            <input class="btn col-sm-10 btn-outline-primary" type="submit" placeholder="Confirm Password" name="submit">
                             
-                            <input class="col-sm-10" type="text" placeholder="Username" title="Your Username" required><br/><br/>
-                            <input class="col-sm-10" type="email" placeholder="Email Address" title="Enter Your Email Address" required><br/><br/>
-                            <input class="col-sm-10" type="password" id="face" placeholder="Password" required><br/><br/>
-                            <input class="col-sm-10" type="password" id="show" placeholder="Confirm Password" required><br/>
-                            <span id="class">password must be the same</span><br/>
-                            <input type="submit" class="btn btn-primary btn-sm col-sm-10 SignUp" value="Sign Up">
-
                           </form>
 
                     </div>
@@ -74,21 +147,12 @@
                     
             </div>
         </div>
-
-         <script>
-                               function validate(){
-                    var m = document.getElementById('face');
-                    var n = document.getElementById('show');
-                    var p = document.getElementById('class');
-                        if (m != n || n != m){
-                            p.style.display = "block";
-                    }
-                  }
-        </script>
-        
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </html>
