@@ -6,6 +6,7 @@
 include('./includes/functions/functions.php');
 
 	$error = array();
+	// input field validation and authentication
 
 	if(array_key_exists('login', $_POST)) {
 
@@ -39,14 +40,20 @@ include('./includes/functions/functions.php');
 				header("location.php?mess=$message");
 			}
 
-			/* if(validateLogin($conn, $_POST['email'], $_POST['password'])) {
-				header("location:sandview.php");
-				//echo "Hello";
-			} else {
-				echo "Wrong email/password";
-			} */
+			
 		}
 	}
+
+
+	 //To retrieve browser registration success message
+
+    if(isset($_GET['success'])){
+      
+        $success = $_GET['success'];
+       
+        
+      }
+
 
 ?>
 
@@ -112,7 +119,7 @@ include('./includes/functions/functions.php');
    <!-- <span> <div class = "img-logo"><a href = "#"><img src = "logo.png"/> <strong>Financial Tracker</a></strong></div></span> <nav><span class = "nav space"></span><span class = "nav space"></span><span class = "nav"><strong><a href = "#">Pricing </a></strong></span><span class = "nav space"></span> <span class = "nav"><strong><a href = "#">Why Us</a></strong></span><span class = "nav space"></span><span class = "nav"><strong><a href = "#">Contact</a></strong></span> <span class = "nav space"></span>  <span class = "nav space"> </span>  <span class = "nav space "></span>   <span class = "nav"><strong></strong></span></nav> -->
 
 
-
+ 
 	<div>
 		<div class="d-flex justify-content-left h-100">
 			<div class="user_card">
@@ -120,11 +127,13 @@ include('./includes/functions/functions.php');
 					<h6 style="color: rgba(3, 3, 3, 0.59); padding-left: 20px;">You are welcome to your financial tracker on this lovely <span id = "demo"></span> , how can we help you today?</h6>
 					
 				</div>
+
+
 				<div class="d-flex justify-content-center form_container">
 					
 					
 					<form action="" method="post">
-						
+						<?php echo '<p class="error">'.$success."</p>"; ?> 
 							<!-- <span  class = "btn btn-primary">Login</span>  <span class="space"></span>           <span  class = "btn btn-primary">  Sign-up</span> -->
 						<!-- <br>
 						<br>
@@ -138,7 +147,7 @@ include('./includes/functions/functions.php');
 									<?php  
 											$mail = displayErrors($error, 'email');
 											echo $mail;
-										?>
+									?>
 							<input type="email" name="email" class="form-control input_user input" value="" placeholder="email">
 						</div>
 						<div class="input-group mb-2">
@@ -147,7 +156,7 @@ include('./includes/functions/functions.php');
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 													<?php
-													     $pass = displayErrors($error, 'password');
+													$pass = displayErrors($error, 'password');
 															echo $pass;
 														?>
 							<input type="password" name="password" class="form-control input_pass input" value="" placeholder="password">

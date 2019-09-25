@@ -17,6 +17,7 @@ if(array_key_exists('submit', $_POST)){
        
         if(doesEmailExist($conn, $_POST['email'])) {
             $errors['email'] = "Email already exists";
+            
         }
 
         if(empty($_POST['password'])) {
@@ -37,9 +38,11 @@ if(array_key_exists('submit', $_POST)){
 
             doUserRegister($conn, $clean);
 
-            echo "Registration successful";
+            $success = "Registration successful | Kindly login to continue";
+            header("location:login.php?success=$success");
         }
     }
+
 
  ?>
 
@@ -69,6 +72,8 @@ if(array_key_exists('submit', $_POST)){
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
+
+    <?php if(isset($success))  echo $success  ?>
         <div class="container-fluid">
             
                 <nav class="navbar navbar-expand-lg bg-transparent static-top">
