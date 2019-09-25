@@ -1,103 +1,117 @@
-body{
-    background-color: #D7D7D7;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    
+body				{
+							background-color: #D7D7D7;
+							background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
+							background-position: center center;
+							background-repeat: no-repeat;
+							background-attachment: fixed;
+							background-size: cover;
+						}
+
+a 					{
+						color: rgba(3, 3, 3, 0.59);
 }
-.container-fluid{
-    background-color: #D7D7D7;
-    width: 1440px;
-    height: 1024px;
+a:hover				{
+						text-decoration: none;
 }
-.nav a{
-    color: rgba(3, 3, 3, 0.59);
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+h1						{
+							position: absolute;
+							width: 250px;
+							height: 297px;
+							left: 31px;
+							top: 200px;
+							color: rgba(0, 0, 0, 0.51);
 }
-/*.row{
-    background-color: #000000;
-}*/
-.col-sm-5{
-    width: 609px;
-    height: 100vh;
+
+h5						{
+							position: absolute;
+							width: 280px;
+							height: 67px;
+							left: 31px;
+							top: 400px;
+							color: rgba(0, 0, 0, 0.51);
 }
-.col-sm-7{
-    background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-    background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
+
+button					{
+							position: absolute; ;
+							width: 200px;
+							height: 65px;
+							left: 3px;
+							top: 490px;
+							background: #C4C4C4;
+							border-radius: 26px;
 }
-.col-sm-10 {
-    margin-top: 24px;
-    height: 50px;
-    border: none;
-    border-radius: 3px;
-    background-color: #EEEEEE;
+
+/*@kuic's css starts here*/
+
+#login	#signup				{
+						    margin-left: 5%;
+						    border: none;
+						    color:#ACA9A9;
+						    width: 130px;
+						    height: 42px;
+						    font-size: 18px !important;
+						    line-height: 21px !important;
+						    border-radius: 8px;
+						    background-color: none !important;
 }
-form{
-    width: 100%;
-    margin: 10% auto;
+
+#login:hover			{
+    						color: #FFFFFF;
 }
-#submit{
-font-style: normal;
-font-weight: bold;
-font-size: 24px !important;
-align-items: center;
-text-align: center;
-color: #FFFFFF;
-margin-top: 10%;
+
+.btn{
+						font-style: normal;
+						font-weight: bold;
+						font-size: 24px !important;
+						display: flex;
+						align-items: center;
+						text-align: center;
+						color: #FFFFFF;
 }
 .btn-group{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+					    display: flex;
+					    justify-content: center;
+					    align-content: center;
+					    align-items: center;
 }
-#signup{
-    text-align: center;
-    border-radius: 8px;
-    border: 2px solid #5CB0FF;
-    font-size: 1.2em !important;
-}
-/*
-#signup:hover{
-    border: none;
-    background-color: blue;
-    color: #FFFFFF;
+/*#signup{
+					    text-align: center;
+					    border-radius: 8px;
+					    border: 2px solid #5CB0FF;
+					    font-size: 1.2em !important;
 }*/
-#login{
-    margin-left: 5%;
-    border: none;
-    color:#ACA9A9;
-    width: 130px;
-    height: 42px;
-    font-size: 18px !important;
-    line-height: 21px !important;
-    border-radius: 8px;
-    background-color: none !important;
+#signup:hover{
+					    border: none;
+					    background-color: blue;
+					    color: #FFFFFF;
 }
-#login:hover{
-    color: #FFFFFF !important;
+
+form{
+					    width: 100%;
+					    margin: 10% auto;
+					    top: -143px;
+
 }
-#login a {
-    text-decoration: none;
-    
+
+.col-sm-5{
+					    width: 609px;
+					    height: 100vh;
 }
-.nav li{
-    list-style: none;
-    padding-left: auto;;
+.col-sm-7{
+					    background-position: center center;
+						background-repeat: no-repeat;
+						background-attachment: fixed;
+						background-size: cover;
+					    background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
 }
-.nav ul{
-    margin-left: auto;
+.col-sm-10 {
+					    margin-top: 24px;
+					    height: 50px;
+					    border: none;
+					    border-radius: 3px;
+					    background-color: #EEEEEE;
 }
-#class {
-	display: none
+.err			{
+					color: red;
+					padding-bottom: 10px;
 }
