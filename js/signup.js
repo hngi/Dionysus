@@ -17,3 +17,11 @@
         });
       }, false);
     })();
+    function validate(){
+      var m = document.getElementById('face');
+      var n = document.getElementById('show');
+      var p = document.getElementById('class');
+          if (m != n || n != m){
+              p.style.display = "block";
+      }
+    };
