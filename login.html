@@ -23,14 +23,18 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-	<link rel="stylesheet" href="login.css">
+
+	<link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
 
 </head>
 
 <body onload="myFunction()">
-															<nav class="navbar navbar-expand-lg bg-transparent static-top">
+
+
+
+															<!--<nav class="navbar navbar-expand-lg bg-transparent static-top">
 															  <div class="container-fluid">
 															    <a class="navbar-brand" href="#">
 															          <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" alt=""><b style="color: rgba(3, 3, 3, 0.59);">FINANCIAL TRACKER</b>
@@ -63,7 +67,7 @@
 
 
 
-	<div>
+<!--	<div>
 		<div class="d-flex justify-content-left h-100">
 			<div class="user_card">
 				<div class="d-fle justify-content-center">
@@ -78,7 +82,7 @@
 							<!-- <span  class = "btn btn-primary">Login</span>  <span class="space"></span>           <span  class = "btn btn-primary">  Sign-up</span> -->
 						<!-- <br>
 						<br>
-						<hr> -->
+						<hr> -
 							<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -116,8 +120,85 @@
 			</div>
 			</div>
 		</div>
+	</div>-->
+
+	
+	<div class="container-fluid">
+            
+		<nav class="nav">
+			 <a class="navbar-brand" href="index.html">
+			   <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="">
+			   Financial Tracker
+			 </a>
+			 
+					<ul class="nav justify-content-center md-3">
+					  <li class="nav-item active">
+						<a class="nav-link" href="index.html">Home
+							  <span class="sr-only">(current)</span>
+							</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Why Us</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Pricing</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Contact</a>
+					  </li>
+					</ul>
+				  
+		</nav>
+
+	<div class="row">
+			<div class="col-sm-5 mb-4">
+				<form class="col text-center needs-validation" novalidate onsubmit="validate()" method="POST"> 
+					<div class="container">
+						<div class="row">
+						  <div class="col text-center">
+							<a href="#"><button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login" disabled>Login</button></a>
+						  </div>
+						</div>
+					  </div>
+					  <div class="col-md-12 mb-2">
+						  <label for="validationCustom01"></label>
+						  <input type="text" class="form-control" id="validationCustom01" placeholder="Username" value="" title="Enter Your Username" required>
+						  <div class="invalid-feedback">Please enter a Username</div>
+					  </div>
+					  
+					  <div class="col-md-12 mb-2">
+						  <label for="validationCustom01"></label>
+						  <input type="password" class="form-control" id="validationCustom01" placeholder="Password" value="" title="Password" required>
+						  <div class="invalid-feedback">Please enter a password</div>
+					  </div>
+					  <div class=" justify-content-center links">
+						<span class = "space"></span> <a href="#"  style="color: rgba(3, 3, 3, 0.59);">Forgot password?</a>
+					 <div></div>
+					 </div>
+					 
+					  <div class="form-group mb-2">
+						<div class="form-check">
+						  <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+						  <label class="form-check-label" for="invalidCheck">
+							Remember Me
+						  </label>
+						  <div class="invalid-feedback">
+						  </div>
+						</div>
+					  </div>
+					  
+					  <div class="col-md-12 mb-2">
+						<button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" id="submit">Login</button>
+					  </div>
+				</form>
+			</div>
+			<div class="col-sm-7 mb-4">
+
+			</div>   
 	</div>
+</div>
 
 	<script src = "days.js"></script>
+	<script src="js/signup.js"></script>
 </body>
 </html>
