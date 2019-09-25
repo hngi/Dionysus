@@ -31,7 +31,7 @@ include('./includes/functions/functions.php');
 				$details = $data[1];
 
 				$_SESSION['userid'] = $details['user_ID'];
-				$_SESSION['name'] = $details['full_Name']
+				$_SESSION['name'] = $details['full_Name'];
 
 				header("location:dashboard.php");
 			} else {
@@ -130,15 +130,26 @@ include('./includes/functions/functions.php');
 						<br>
 						<hr> -->
 							<div class="input-group mb-3">
+					
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
+
 							</div>
+									<?php  
+											$mail = displayErrors($error, 'email');
+											echo $mail;
+										?>
 							<input type="email" name="email" class="form-control input_user input" value="" placeholder="email">
 						</div>
 						<div class="input-group mb-2">
+
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
+													<?php
+													     $pass = displayErrors($error, 'password');
+															echo $pass;
+														?>
 							<input type="password" name="password" class="form-control input_pass input" value="" placeholder="password">
                         </div>
                         <div class=" justify-content-center links">
