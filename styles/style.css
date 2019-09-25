@@ -14,7 +14,7 @@ body{
     color: rgba(3, 3, 3, 0.59);
     font-family: sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 24px;
     line-height: 28px;
     display: flex;
@@ -46,14 +46,14 @@ form{
     width: 100%;
     margin: 10% auto;
 }
-.btn{
+#submit{
 font-style: normal;
 font-weight: bold;
 font-size: 24px !important;
-display: flex;
 align-items: center;
 text-align: center;
 color: #FFFFFF;
+margin-top: 10%;
 }
 .btn-group{
     display: flex;
@@ -67,11 +67,12 @@ color: #FFFFFF;
     border: 2px solid #5CB0FF;
     font-size: 1.2em !important;
 }
+/*
 #signup:hover{
     border: none;
     background-color: blue;
     color: #FFFFFF;
-}
+}*/
 #login{
     margin-left: 5%;
     border: none;
@@ -84,7 +85,11 @@ color: #FFFFFF;
     background-color: none !important;
 }
 #login:hover{
-    color: #FFFFFF;
+    color: #FFFFFF !important;
+}
+#login a {
+    text-decoration: none;
+    
 }
 .nav li{
     list-style: none;

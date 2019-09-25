@@ -16,14 +16,14 @@
         <div class="container-fluid">
             
                 <nav class="nav">
-                     <a class="navbar-brand" href="#">
+                     <a class="navbar-brand" href="index.html">
                        <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="">
                        Financial Tracker
                      </a>
                      
-                            <ul class="nav justify-content-center">
+                            <ul class="nav justify-content-center md-3">
                               <li class="nav-item active">
-                                <a class="nav-link" href="#">Home
+                                <a class="nav-link" href="index.html">Home
                                       <span class="sr-only">(current)</span>
                                     </a>
                               </li>
@@ -42,28 +42,46 @@
 
             <div class="row">
                     <div class="col-sm-5 mb-4">
-                        <form class="col text-center"> 
+                        <form class="col text-center needs-validation" novalidate> 
                             <div class="container">
                                 <div class="row">
                                   <div class="col text-center">
-                                      <button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login">Login</button>
-                                      <button type="button" class="btn  btn-outline-primary col-sm-4 mb-4 btn-sm" id="signup" value="SignUp">SignUp</button>
+                                    <a href="login.html"><button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login">Login</button></a>
+                                      <button type="button" class="btn  btn-outline-primary col-sm-4 mb-4 btn-sm" disabled id="signup" value="SignUp">SignUp</button>
                                   </div>
                                 </div>
                               </div>
-                            <input class="col-sm-10" type="text" placeholder="Username" title="Your Username" required>
-                            <input class="col-sm-10" type="email" placeholder="Email Address" title="Enter Your Email Address" required>
-                            <input class="col-sm-10" type="password" placeholder="Password" required>
-                            <input class="col-sm-10" type="password" placeholder="Confirm Password" required>
-                            <button type="button" class="btn btn-primary btn-sm col-sm-10 SignUp">Sign Up</button>
-                          </form>
-
+                              <div class="col-md-12 mb-2">
+                                  <label for="validationCustom01"></label>
+                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Username" value="" title="Enter Your Username" required>
+                                  <div class="invalid-feedback">Please enter a Username</div>
+                              </div>
+                              <div class="col-md-12 mb-2">
+                                  <label for="validationCustom01"></label>
+                                  <input type="email" class="form-control" id="validationCustom02" placeholder="Email Address" value="" title="Enter Your Email Address" required>
+                                  <div class="invalid-feedback">Please enter your email address</div>
+                              </div>
+                              <div class="col-md-12 mb-2">
+                                  <label for="validationCustom01"></label>
+                                  <input type="password" class="form-control" id="validationCustom01" placeholder="Password" value="" title="Password" required>
+                                  <div class="invalid-feedback">Please enter a password</div>
+                              </div>
+                              <div class="col-md-12 mb-2">
+                                  <label for="validationCustom01"></label>
+                                  <input type="password" class="form-control" id="validationCustom01" placeholder="Confirm Password" value="" title="Confirm Password" required>
+                                  <div class="invalid-feedback">Please confirm your password</div>
+                              </div>
+                              <div class="col-md-12 mb-2">
+                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" id="submit">Sign up</button>
+                              </div>
+                        </form>
                     </div>
-                    <div class="col-sm-7 mb-4"></div>
-                    
+                    <div class="col-sm-7 mb-4">
+
+                    </div>   
             </div>
         </div>
-        
+        <script src="js/signup.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
