@@ -104,7 +104,7 @@ if(array_key_exists('submit', $_POST)){
 
             <div class="row">
                     <div class="col-sm-5 mb-4">
-                        <form class="col text-center" action="" method="post"> 
+                        <form class="col text-center" action="" method="post" style="top: 5px;"> 
                             <div class="container">
                                 <div class="row">
                                   <div class="col text-center">
@@ -118,25 +118,34 @@ if(array_key_exists('submit', $_POST)){
                             $data = displayErrors($errors, 'name');
                             echo $data;
                               ?>
+                            <div class="err">
                             <input class="col-sm-10" type="text" placeholder="Full Name" title="Your Full Name" name="name">
+                            </div>
 
                             <?php 
                             $data = displayErrors($errors, 'email');
                             echo $data;
                               ?>
-                            <input class="col-sm-10" type="email" placeholder="Email Address" title="Enter Your Email Address" name="email" >
+                              <div class="err">
+                            <input class="col-sm-10" type="email" placeholder="Email Address" title="Enter Your Email Address" name="email">
+                              </div>
 
                             <?php 
                             $data = displayErrors($errors, 'password');
                             echo $data;
                               ?>
+                              <div class="err">
                             <input class="col-sm-10" type="password" placeholder="Password" name="password">
+                              </div>
 
                             <?php 
                             $data = displayErrors($errors, 'pword');
                             echo $data;
                               ?>
+
+                            <div class="err">
                             <input class="col-sm-10" type="password" placeholder="Confirm Password" name="pword">
+                            </div>
 
                             <input class="btn col-sm-10 btn-outline-primary" type="submit" placeholder="Confirm Password" name="submit">
                             
