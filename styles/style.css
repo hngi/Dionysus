@@ -66,6 +66,11 @@ margin-top: 10%;
     border-radius: 8px;
     border: 2px solid #5CB0FF;
     font-size: 1.2em !important;
+    width: 170px !important;
+    height: 40px;
+}
+#signup:hover{
+    border: none !important;
 }
 /*
 #signup:hover{
