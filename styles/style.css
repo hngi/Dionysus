@@ -93,3 +93,6 @@ color: #FFFFFF;
 .nav ul{
     margin-left: auto;
 }
+#class {
+	display: none
+}
