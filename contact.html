@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Login Page</title>
+        <title>Sign Up Page</title>
         <meta name="description" content="Financial Tracker Web App">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
@@ -26,7 +26,7 @@
             
                 <nav class="nav">
                      <a class="navbar-brand" href="index.html">
-                       <img style="margin-right: 20px;" src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                       <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="">
                        Financial Tracker
                      </a>
                      
@@ -43,7 +43,7 @@
                                 <a class="nav-link" href="#">Pricing</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
+                                <a class="nav-link" href="#">Contact</a>
                               </li>
                             </ul>
                           
@@ -51,44 +51,35 @@
 
             <div class="row">
                     <div class="col-sm-5 mb-4">
-                        <div class="row d-flex justify-content-center">
-                            <p class="white-text mt-5  font-weight-normal">Login to see your dashboard</p>
-                          </div>
                         <form class="col text-center needs-validation" novalidate onsubmit="validate()" method="POST"> 
-                            <div class="container">
-                                <div class="row">
-                                  <div class="col text-center">
-                                    <a href="#"><button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login" disabled>Login</button></a>
-                                     <a href="signup.html"><button type="button" class="btn  btn-outline-primary col-sm-4 mb-4 btn-sm"id="signup">SignUp</button></a>
-                                  </div>
-                                </div>
+                          <div class="row d-flex justify-content-center">
+                            <h3 class="white-text mb-0  font-weight-bold">Contact Us</h3>
+                          </div>                    
+                              <div class="col-md-12 mb-2">
+                                  <label for="validationCustom01"></label>
+                                  <input type="text" class="form-control" id="validationCustom01" placeholder="First Name" value="" title="Enter Your First Name" required>
+                                  <div class="invalid-feedback">Please enter your First Name</div>
                               </div>
                               <div class="col-md-12 mb-2">
                                   <label for="validationCustom01"></label>
-                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Username" value="" title="First Name" required>
-                                  <div class="invalid-feedback">First Name</div>
+                                  <input type="text" class="form-control" id="validationCustom02" placeholder="Last Name" value="" title="Enter Your Last Name" required>
+                                  <div class="invalid-feedback">Please enter your Last Name</div>
                               </div>
-                              
                               <div class="col-md-12 mb-2">
                                   <label for="validationCustom01"></label>
-                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Password" value="" title="Last Name" required>
-                                  <div class="invalid-feedback"></div>
+                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Title" value="" title="Message title" required>
+                                  <div class="invalid-feedback">Please enter Message Title</div>
+                              </div>
+                              <div class="form-group has-error col-md-12">
+                                <label for="validationCustom01"></label>
+                                <textarea class="form-control" id="validationCustom01" rows="7" placeholder="Message" title="Enter Your Message"></textarea>
+                                <div class="invalid-feedback">Message is Empty</div>
+                              </div>
+                              <div class="col-md-12">
+                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" id="submit">Send</button>
                               </div>
                               
-                              <div class="col-md-12 mb-2">
-                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" id="submit">Login</button>
-							  </div>
-							  <div>
-								  <a class="text-left" href="password.html">Forgot Password</a>
-							  </div>
-							  <br>
-
-							  <div class="form-check">
-							  	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							  	<label class="form-check-label" for="defaultCheck1">
-							  	  Remember Me
-							  	</label>
-							    </div>
+                  
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
