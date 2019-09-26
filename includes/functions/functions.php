@@ -1,10 +1,10 @@
 <?php
 
-      function doUserRegister($dbconn, $input) {
+    function doUserRegister($dbconn, $input) {
 
         $hash = password_hash($input['password'], PASSWORD_BCRYPT);
 
-        $stmt = $dbconn->prepare("INSERT INTO user(full_Name, email, password) VALUES(:f, :e, :h)");
+        $stmt = $dbconn->prepare("INSERT INTO user(username, email, password) VALUES(:f, :e, :h)");
 
         $data = [
             ":f" => $input['name'],
