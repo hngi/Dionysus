@@ -1,54 +1,55 @@
-<?php
+<?php 
 
-session_start();
+include('./includes/db/db_config.php');
+include('./includes/functions/functions.php');
+$errors = array();
 
-include './includes/db/db_config.php';
-include './includes/functions/functions.php';
+//Validates email and checks to see if email exists upon submit
+if(array_key_exists('submit', $_POST)){
+    
 
-$error = array();
-
-if (array_key_exists('login', $_POST)) {
-
-    if (empty($_POST['email'])) {
-        $error['email'] = "Please enter your email";
-    }
-
-    if (empty($_POST['password'])) {
-        $error['password'] = "Please enter your password";
-    } else {
-        $msg = "Invalid email/password";
-        header("location:login.php?msg=$msg");
-    }
-
-    if (empty($error)) {
-
-        $clean = array_map('trim', $_POST);
-
-        $data = userLogin($conn, $clean);
-
-        if ($data[0]) {
-
-            $details = $data[1];
-
-            $_SESSION['userid'] = $details['user_ID'];
-            $_SESSION['name'] = $details['full_Name'];
-
-            header("location:dashboard.php");
-        } else {
-            $message = "Invalid email/password";
-            header("location.php?mess=$message");
+        if(empty($_POST['email'])) {
+            $errors['email'] = "Please enter your email";
         }
 
-        /* if(validateLogin($conn, $_POST['email'], $_POST['password'])) {
-    header("location:sandview.php");
-    //echo "Hello";
-    } else {
-    echo "Wrong email/password";
-    } */
-    }
-}
+       
+        if(emailDoesNotExist($conn, $_POST['email'])) {
+          $errors['email'] = "Email does not exist";
+            
+        }
 
-?>
+
+          // Retrieves user email and user ID
+        $user = getUserByEmail($conn, $_POST['email']);
+
+           $show = $user[0];
+           $email = $user[2];
+          
+
+          if(empty($errors)) {
+
+            // Sends email to user with password recovery link using mail function
+            
+             $message = "E be like say you dun forget your password. If this na mistake, just ignore this email and nothing go happen.\r\n". "To reset your password, Follow this link: http://password_reset.php?user=$show";
+            $to = $email;
+             $email_subject = "Password Recovery";
+            $headers =  'MIME-Version: 1.0' . "\r\n";
+            $headers.= 'From: Team Dionysus'."\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            $headers.='Reply-To: $email_address'."\r\n";
+            mail($to, $email_subject, $message, $headers);
+
+
+
+           $sent = " Password recovery instructions has been successfully forwarded to your mail";
+        }
+    }
+
+
+ ?>
+
+
+
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -70,18 +71,18 @@ if (array_key_exists('login', $_POST)) {
         <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
         <link rel="stylesheet" type="text/css" href="styles/style.css">
-
+        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
         <div class="container-fluid">
-
+            
                 <nav class="nav">
-                     <a class="navbar-brand" href="index.html">
+                     <a class="navbar-brand" href="index.php">
                        <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="">
                        Financial Tracker
                      </a>
-
+                     
                             <ul class="nav justify-content-center md-3">
                               <li class="nav-item active">
                                 <a class="nav-link" href="index.php">Home
@@ -98,58 +99,47 @@ if (array_key_exists('login', $_POST)) {
                                 <a class="nav-link" href="#">Contact</a>
                               </li>
                             </ul>
-
+                          
                 </nav>
 
             <div class="row">
                     <div class="col-sm-5 mb-4">
-                        <form action="" method="post">
+                        <form class="col text-center needs-validation" action="" novalidate onsubmit="validate()" method="POST"> 
                             <div class="container">
                                 <div class="row">
                                   <div class="col text-center">
-                                    <a href="#"><button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login" disabled>Login</button></a>
-                                     <a href="signup.php"><button type="button" class="btn  btn-outline-primary col-sm-4 mb-4 btn-sm"id="signup">SignUp</button></a>
+                                    <a href="login.html"><button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login">Login</button></a>
+                                     <a href="#"><button type="button" class="btn  btn-outline-primary col-sm-4 mb-4 btn-sm disabled"id="signup">SignUp</button></a>
                                   </div>
                                 </div>
                               </div>
+                              <p class="text-center"> <strong>Please enter your email address to recover your password </strong></p>
+
+                              <?php 
+                                          $data = displayErrors($errors, 'email');
+                                          echo $data;
+
+
+                                          if(isset($sent))  echo $sent;
+
+
+                                   ?> 
+
+                                 
                               <div class="col-md-12 mb-2">
-                  <label for="validationCustom01"></label>
-                  <?php $mail = displayErrors($error, 'email');
-                  echo $mail;
-                  ?>
-                                  <input type="email" class="form-control" id="validationCustom01" placeholder="email" value="" title="Enter Your Email" name="email" required>
-                                  <div class="invalid-feedback">Please enter your email</div>
+                                  <label for="validationCustom01"></label>
+                                  <input type="email" class="form-control" id="validationCustom01" placeholder="Email" value="" title="Enter Your Email" name="email" required>
+                                  
+                                  <div class="invalid-feedback"> Please enter your email address </div>
                               </div>
-
                               <div class="col-md-12 mb-2">
-                  <label for="validationCustom01"></label>
-                  <?php
-                  $pass = displayErrors($error, 'password');
-                  echo $pass;
-                  ?>
-                                  <input type="password" class="form-control" id="validationCustom01" placeholder="Password" name="password" title="Password" required>
-                                  <div class="invalid-feedback">Please enter a password</div>
-                              </div>
-
-                              <div class="col-md-12 mb-2">
-                                <input class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="login" value="Login" id="login_btn">
-                </div>
-                <div>
-                  <a class="text-left" href="password.php">Forgot Password</a>
-                </div>
-                <br>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                  <label class="form-check-label" for="defaultCheck1">
-                    Remember Me
-                  </label>
-                  </div>
+                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="submit" id="submit" data-toggle="modal" data-target="#exampleModal">Send</button>
+							  </div>
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
 
-                    </div>
+                    </div>   
             </div>
         </div>
         <script src="js/signup.js"></script>
