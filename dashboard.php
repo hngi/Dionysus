@@ -2,7 +2,7 @@
 <?php include 'includes/sidebar.php'?>
         <main role="main">
             <section class="panel important">
-                <h2><?php echo $_SESSION['name']; ?> Welcome to Your Dashboard </h2>
+                <h2><?php echo $_SESSION['username']; ?> Welcome to Your Dashboard </h2>
             </section>
             <section class="panel" id="panel">
                 <p><strong>Expenses this week</strong></p>
