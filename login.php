@@ -135,7 +135,7 @@ if (array_key_exists('login', $_POST)) {
                                 <input class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="login" value="Login" id="login_btn">
                 </div>
                 <div>
-                  <a class="text-left" href="password.php">Forgot Password</a>
+                  <a class="text-center" href="password.php">Forgot Password</a>
                 </div>
                 <br>
 
