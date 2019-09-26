@@ -84,7 +84,7 @@ if (array_key_exists('login', $_POST)) {
 
                             <ul class="nav justify-content-center md-3">
                               <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Home
+                                <a class="nav-link" href="index.php">Home
                                       <span class="sr-only">(current)</span>
                                     </a>
                               </li>
@@ -113,38 +113,38 @@ if (array_key_exists('login', $_POST)) {
                                 </div>
                               </div>
                               <div class="col-md-12 mb-2">
-								  <label for="validationCustom01"></label>
-								  <?php $mail = displayErrors($error, 'email');
-								  echo $mail;
-								  ?>
+                  <label for="validationCustom01"></label>
+                  <?php $mail = displayErrors($error, 'email');
+                  echo $mail;
+                  ?>
                                   <input type="email" class="form-control" id="validationCustom01" placeholder="email" value="" title="Enter Your Email" name="email" required>
                                   <div class="invalid-feedback">Please enter your email</div>
                               </div>
 
                               <div class="col-md-12 mb-2">
-								  <label for="validationCustom01"></label>
-								  <?php
-								  $pass = displayErrors($error, 'password');
-								  echo $pass;
-								  ?>
+                  <label for="validationCustom01"></label>
+                  <?php
+                  $pass = displayErrors($error, 'password');
+                  echo $pass;
+                  ?>
                                   <input type="password" class="form-control" id="validationCustom01" placeholder="Password" name="password" title="Password" required>
                                   <div class="invalid-feedback">Please enter a password</div>
                               </div>
 
                               <div class="col-md-12 mb-2">
                                 <input class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="login" value="Login" id="login_btn">
-							  </div>
-							  <div>
-								  <a class="text-left" href="password.html">Forgot Password</a>
-							  </div>
-							  <br>
+                </div>
+                <div>
+                  <a class="text-left" href="password.php">Forgot Password</a>
+                </div>
+                <br>
 
-							  <div class="form-check">
-							  	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							  	<label class="form-check-label" for="defaultCheck1">
-							  	  Remember Me
-							  	</label>
-							    </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  <label class="form-check-label" for="defaultCheck1">
+                    Remember Me
+                  </label>
+                  </div>
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
