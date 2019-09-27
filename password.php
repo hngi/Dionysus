@@ -108,7 +108,7 @@ if(array_key_exists('submit', $_POST)){
                             <div class="container">
                                 <div class="row">
                                   <div class="col text-center">
-                                    <a href="login.html"><button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login">Login</button></a>
+                                    <a href="login.php"><button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login">Login</button></a>
                                      <a href="#"><button type="button" class="btn  btn-outline-primary col-sm-4 mb-4 btn-sm disabled"id="signup">SignUp</button></a>
                                   </div>
                                 </div>
@@ -138,7 +138,7 @@ if(array_key_exists('submit', $_POST)){
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
-
+                        <img src="https://res.cloudinary.com/kuic/image/upload/v1569576950/Financial%20tracker/Group_3_mj9elh.png" alt="financial tracker image" class="img-fluid mt-3"> 
                     </div>   
             </div>
         </div>

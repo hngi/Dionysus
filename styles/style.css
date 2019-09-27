@@ -7,8 +7,8 @@ body{
 }
 .container-fluid{
     background-color: #D7D7D7;
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
+    height: 100%;
 }
 .nav a{
     color: rgba(3, 3, 3, 0.59);
@@ -29,14 +29,20 @@ body{
     width: 609px;
     height: 100vh;
 }
-.col-sm-7{
-    background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-    background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
+.img-fluid{
+    max-width: 100%;
+    height: auto;
 }
-.col-sm-10 {
+/*.col-sm-7{
+    background-position: center;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+	background-size:contain;
+    background-image: url("");
+    
+}*/
+    .col-sm-10 {
     margin-top: 24px;
     height: 50px;
     border: none;

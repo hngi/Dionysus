@@ -149,8 +149,8 @@ if(array_key_exists('submit', $_POST)){
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
-
-                    </div>   
+                        <img src="https://res.cloudinary.com/kuic/image/upload/v1569576950/Financial%20tracker/Group_3_mj9elh.png" alt="financial tracker image" class="img-fluid mt-3"> 
+                    </div>  
             </div>
         </div>
         <script src="js/signup.js"></script>
