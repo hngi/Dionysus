@@ -1,3 +1,6 @@
+*{
+    scroll-behavior: smooth;
+}
 body{
     background-color: #D7D7D7;
     margin: 0;
@@ -21,6 +24,9 @@ body{
     display: flex;
     align-items: center;
     text-align: center;
+}
+.nav{
+    background-color: #D7D7D7;
 }
 /*.row{
     background-color: #000000;
@@ -112,4 +118,9 @@ margin-top: 10%;
 }
 #class {
 	display: none
+}
+@media only screen and (max-width:576px){
+    .img-fluid{
+    display: none;
+    }
 }
