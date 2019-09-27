@@ -67,7 +67,7 @@ function getUserByEmail($dbconn, $email)
 {
     $stmt = $dbconn->prepare("SELECT * FROM user WHERE email=:e");
 
-    $stmt->bindParam(':e', $email);
+    $stmt->bindParam(':e', $email['email']);
 
     $stmt->execute();
 
