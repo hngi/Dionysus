@@ -83,7 +83,7 @@ if(array_key_exists('submit', $_POST)){
                        Financial Tracker
                      </a>
                      
-                            <ul class="nav justify-content-center md-3">
+                            <ul class="nav justify-content-center mt-3">
                               <li class="nav-item active">
                                 <a class="nav-link" href="index.php">Home
                                       <span class="sr-only">(current)</span>
