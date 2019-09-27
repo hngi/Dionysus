@@ -113,10 +113,12 @@ form {
     margin-left: auto;
 }
 
-#class {
+/*#class {
     display: none
+}*/
+.fa-user-circle{
+padding-right: 10%;
 }
-
 .row {
     background-color: black;
     padding-top: 0;
