@@ -1,5 +1,4 @@
 <?php 
-
 include('./includes/db/db_config.php');
 include('./includes/functions/functions.php');
 $errors = array();
@@ -20,9 +19,9 @@ if(array_key_exists('submit', $_POST)){
 
 
           // Retrieves user email and user ID
-        $user = getUserByEmail($conn, $_POST['email']);
+        $user = getUserByEmail($conn, $_POST);
 
-           $show = $user[0];
+         $show = $user[0];
            $email = $user[2];
           
 
@@ -30,7 +29,7 @@ if(array_key_exists('submit', $_POST)){
 
             // Sends email to user with password recovery link using mail function
             
-             $message = "E be like say you dun forget your password. If this na mistake, just ignore this email and nothing go happen.\r\n". "To reset your password, Follow this link: http://password_reset.php?user=$show";
+             $message = "E be like say you dun forget your password. If this na mistake, just ignore this email and nothing go happen.\r\n". "To reset your password, Follow this link: http://dionysus.6te.net/password_reset.php?user=$show";
             $to = $email;
              $email_subject = "Password Recovery";
             $headers =  'MIME-Version: 1.0' . "\r\n";
@@ -44,7 +43,6 @@ if(array_key_exists('submit', $_POST)){
            $sent = " Password recovery instructions has been successfully forwarded to your mail";
         }
     }
-
 
  ?>
 
@@ -123,11 +121,11 @@ if(array_key_exists('submit', $_POST)){
                                 <div class="row">
                                   <div class="col text-center">
                                     <a href="login.php"><button type="button" class="btn btn-outline-primary col-sm-4 mb-4 btn-sm" id="login">Login</button></a>
-                                     <a href="#"><button type="button" class="btn  btn-outline-primary col-sm-4 mb-4 btn-sm disabled"id="signup">SignUp</button></a>
+                                     <a href="signup.php"><button type="button" class="btn  btn-outline-primary col-sm-4 mb-4 btn-sm disabled"id="signup">SignUp</button></a>
                                   </div>
                                 </div>
                               </div>
-                              <p class="text-center"> <strong>Please enter your email address to recover your password </strong></p>
+                              <p class="text-center">Please enter your email address to recover your password </p>
 
                               <?php 
                                           $data = displayErrors($errors, 'email');
@@ -148,7 +146,10 @@ if(array_key_exists('submit', $_POST)){
                               </div>
                               <div class="col-md-12 mb-2">
                                 <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="submit" id="submit" data-toggle="modal" data-target="#exampleModal">Send</button>
-							  </div>
+                                <div>
+                 <!--  <a class="text-left" href="alt_passwordreset.php">Click here if you could not receive a mail</a> -->
+                </div>
+                </div>
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
