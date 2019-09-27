@@ -45,6 +45,20 @@
                               <li class="nav-item">
                                 <a class="nav-link" href="contact.html">Contact</a>
                               </li>
+                              <li class="invisible">
+                                  <img class="image" src="" alt="..." class="img-thumbnail">
+                              </li>
+                              <li class="nav-item dropdown invisible">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        John Doe
+                                      </a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="login.html">Sign Out</a>
+                                      <a class="dropdown-item" href="#">Another action</a>
+                                      <div class="dropdown-divider"></div>
+                                      <a class="dropdown-item" href="#">Something else here</a>
+                                  </div>
+                              </li>
                             </ul>
                           
                 </nav>
@@ -54,7 +68,7 @@
                         <div class="row d-flex justify-content-center">
                             <p class="white-text mt-5  font-weight-normal">Login to see your dashboard</p>
                           </div>
-                        <form class="col text-center needs-validation" novalidate onsubmit="validate()" method="POST" action="login.php"> 
+                        <form class="col text-center needs-validation" novalidate onsubmit="validate()" method="POST" action="dashboard.html"> 
                             <div class="container">
                                 <div class="row">
                                   <div class="col text-center">
@@ -71,24 +85,23 @@
                               
                               <div class="col-md-12 mb-2">
                                   <label for="validationCustom01"></label>
-                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Password" value="" title="Last Name" required>
+                                  <input type="password" class="form-control" id="validationCustom01" placeholder="Password" value="" title="Last Name" required>
                                   <div class="invalid-feedback"></div>
                               </div>
                               
                               <div class="col-md-12 mb-2">
-                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" id="submit">Login</button>
+                                <a href="dashboard.html"><button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" id="submit">Login</button></a>
 							  </div>
-							  <div>
-								  <a class="text-center" href="password.html">Forgot Password?</a>
-							  </div>
-							  <br>
-
 							  <div class="form-check">
 							  	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
 							  	<label class="form-check-label" for="defaultCheck1">
 							  	  Remember Me
 							  	</label>
-							    </div>
+                  </div>
+                  <br>
+                  <div>
+                      <a class="text-center" href="password.html">Forgot Password?</a>
+                  </div>
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
