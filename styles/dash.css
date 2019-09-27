@@ -120,7 +120,7 @@ form {
 padding-right: 10%;
 }
 .row {
-    background-color: black;
+    background-color:#FFFFFF;
     padding-top: 0;
 }
 
@@ -290,10 +290,6 @@ margin-top: 10%;
 .nav ul{
     margin-left: auto;
 }
-#class {
-	display: none
-}
-
 
 /*body.login {
   background-color: white;
