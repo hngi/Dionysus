@@ -52,13 +52,9 @@ if (isset($_GET['logout'])) {
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
-            <li>
-                <img class="image" src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi2-prod.mirror.co.uk%2Fincoming%2Farticle14334083.ece%2FALTERNATES%2Fs615%2F3_Beautiful-girl-with-a-gentle-smile.jpg&imgrefurl=https%3A%2F%2Fwww.mirror.co.uk%2Flifestyle%2Fhealth%2Fhuman-faces-now-different-shape-14331345&docid=nfgAREMoSZ2WCM&tbnid=kA9mBLZg9mG3CM%3A&vet=10ahUKEwiS1uqGxe3kAhUJfMAKHVLmC-0QMwiEASgIMAg..i&w=615&h=409&bih=801&biw=1422&q=face&ved=0ahUKEwiS1uqGxe3kAhUJfMAKHVLmC-0QMwiEASgIMAg&iact=mrc&uact=8"
-                    alt="..." class="img-thumbnail">
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php echo $_SESSION['username']; ?>
+                <i class="fas fa-user-circle"><?php echo $_SESSION['username']; ?>
                     </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="dashboard.php?logout='1'" id="logout">Sign Out</a>
