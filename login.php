@@ -13,6 +13,7 @@ if (array_key_exists('login', $_POST)) {
         $error['email'] = "Please enter your email";
     }
 
+
     if (empty($_POST['password'])) {
         $error['password'] = "Please enter your password";
     } else {
@@ -34,19 +35,32 @@ if (array_key_exists('login', $_POST)) {
             $_SESSION['username'] = $details['username'];
 
             header("location:dashboard.php");
-        } else {
+        } /*else {
             $message = "Invalid email/password";
             header("location.php?mess=$message");
-        }
+        }*/
 
-        /* if(validateLogin($conn, $_POST['email'], $_POST['password'])) {
-    header("location:sandview.php");
-    //echo "Hello";
-    } else {
-    echo "Wrong email/password";
-    } */
+
     }
-}
+}// End general if
+
+
+
+ if(isset($_GET['success'])){
+      
+        $success = $_GET['success'];
+       
+        
+      }
+
+
+
+ if(isset($_GET['msg'])){
+      
+        $invalid = $_GET['msg'];
+       
+        
+      }
 
 ?>
 
@@ -127,10 +141,11 @@ if (array_key_exists('login', $_POST)) {
                                 </div>
                               </div>
                               <div class="col-md-12 mb-2">
-                  <label for="validationCustom01"></label>
+                  <label for="validationCustom01"><?php  if(isset($invalid))  echo $invalid ?></label>
                   <?php $mail = displayErrors($error, 'email');
                   echo $mail;
                   ?>
+                  <?php  if(isset($success))  echo $success ?>
                                   <input type="email" class="form-control" id="validationCustom01" placeholder="email" value="" title="Enter Your Email" name="email" required>
                                   <div class="invalid-feedback">Please enter your email</div>
                               </div>
