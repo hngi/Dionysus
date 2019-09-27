@@ -31,7 +31,7 @@ if (array_key_exists('login', $_POST)) {
             $details = $data[1];
 
             $_SESSION['userid'] = $details['user_ID'];
-            $_SESSION['name'] = $details['full_Name'];
+            $_SESSION['username'] = $details['username'];
 
             header("location:dashboard.php");
         } else {

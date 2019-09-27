@@ -1,133 +1,166 @@
 <?php
 
-    function doUserRegister($dbconn, $input) {
+function doUserRegister($dbconn, $input)
+{
 
-        $hash = password_hash($input['password'], PASSWORD_BCRYPT);
+    $hash = password_hash($input['password'], PASSWORD_BCRYPT);
 
-        $stmt = $dbconn->prepare("INSERT INTO user(username, email, password) VALUES(:f, :e, :h)");
+    $stmt = $dbconn->prepare("INSERT INTO user(username, email, password) VALUES(:f, :e, :h)");
 
-        $data = [
-            ":f" => $input['name'],
-            ":e" => $input['email'],
-            ":h" => $hash
-        ];
+    $data = [
+        ":f" => $input['name'],
+        ":e" => $input['email'],
+        ":h" => $hash,
+    ];
 
-        $stmt->execute($data);
+    $stmt->execute($data);
+}
+
+function doesEmailExist($dbconn, $email)
+{
+    $result = false;
+
+    $stmt = $dbconn->prepare("SELECT email FROM user WHERE :e=email");
+
+    $stmt->bindParam(":e", $email);
+    $stmt->execute();
+
+    $count = $stmt->rowCount();
+
+    if ($count > 0) {
+        $result = true;
     }
 
-    function doesEmailExist($dbconn, $email) {
-        $result = false;
+    return $result;
+}
 
-        $stmt = $dbconn->prepare("SELECT email FROM user WHERE :e=email");
+function doAddExpenseItem($dbconn, $input)
+{
 
-        $stmt->bindParam(":e", $email);
-        $stmt->execute();
+    $stmt = $dbconn->prepare("INSERT INTO userexpense(user_ID, expense_Date, expense_Item, expense_Cost, type, description) VALUES(:a, :b, :c, :d, :e, :f)");
 
-        $count = $stmt->rowCount();
+    $data = [
+        ":a" => $_SESSION['userid'],
+        ":b" => $input['date'],
+        ":c" => $input['item-name'],
+        ":d" => $input['amount'],
+        ":e" => $input['type1'],
+        ":f" => $input['description'],
+    ];
 
-        if($count > 0) {
-            $result = true;
-        }
+    $stmt->execute($data);
+}
 
-        return $result;
+function displayErrors($err, $name)
+{
+
+    $result = "";
+
+    if (isset($err[$name])) {
+        $result = '<span class=err>' . $err[$name] . '</span>';
     }
 
-    function displayErrors($err, $name) {
+    return $result;
+}
 
-        $result = "";
+function getUserByEmail($dbconn, $email)
+{
+    $stmt = $dbconn->prepare("SELECT * FROM user WHERE email=:e");
 
-        if(isset($err[$name])) {
-            $result = '<span class=err>'.$err[$name].'</span>';
-        }
+    $stmt->bindParam(':e', $email);
 
-        return $result;
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+
+    return $row;
+
+}
+
+function getUserItems($dbconn, $userid)
+{
+    $arr = [];
+    $stmt = $dbconn->prepare("SELECT * FROM userexpense WHERE user_ID=:u ORDER BY expense_Date ASC LIMIT 10");
+
+    $stmt->bindParam(':u', $userid);
+
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $arr[] = $row;
     }
 
+    return $arr;
 
+}
 
+function getAllUserItems($dbconn, $userid)
+{
+    $arr = [];
+    $stmt = $dbconn->prepare("SELECT * FROM userexpense WHERE user_ID=:u ORDER BY expense_Date ASC");
 
-     function getUserByEmail($dbconn, $email){
-                    $stmt = $dbconn->prepare("SELECT * FROM user WHERE email=:e");
+    $stmt->bindParam(':u', $userid);
 
-                    $stmt->bindParam(':e', $email);
-
-                    $stmt->execute();
-
-
-                    $row = $stmt->fetch(PDO::FETCH_BOTH);
-
-
-                    return $row;
-
-
-
-                }
-
-
-
-     function emailDoesNotExist($dbconn, $email) {
-        $result = false;
-
-        $stmt = $dbconn->prepare("SELECT email FROM user WHERE :e=email");
-
-        $stmt->bindParam(":e", $email);
-        $stmt->execute();
-
-        $count = $stmt->rowCount();
-
-        if($count == 0) {
-            $result = true;
-        }
-
-        return $result;
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $arr[] = $row;
     }
 
+    return $arr;
 
+}
 
-   function updatePassword($dbconn, $input) {
+function emailDoesNotExist($dbconn, $email)
+{
+    $result = false;
 
-           
-            $hash = password_hash($input['password'], PASSWORD_BCRYPT);
+    $stmt = $dbconn->prepare("SELECT email FROM user WHERE :e=email");
 
-        $stmt = $dbconn->prepare("UPDATE user SET password=:pass WHERE user_ID=:uid");
+    $stmt->bindParam(":e", $email);
+    $stmt->execute();
 
-        $data = [
-           
-            ":uid" => $input['user_id'],
-             ":pass" => $hash
-        ];
+    $count = $stmt->rowCount();
 
-        $stmt->execute($data);
+    if ($count == 0) {
+        $result = true;
     }
 
+    return $result;
+}
 
+function updatePassword($dbconn, $input)
+{
 
+    $hash = password_hash($input['password'], PASSWORD_BCRYPT);
 
+    $stmt = $dbconn->prepare("UPDATE user SET password=:pass WHERE user_ID=:uid");
 
+    $data = [
 
-     function userLogin($dbconn, $input) {
+        ":uid" => $input['user_id'],
+        ":pass" => $hash,
+    ];
 
-        $result = [];
+    $stmt->execute($data);
+}
 
-        $stmt = $dbconn->prepare("SELECT * FROM user WHERE email=:e");
+function userLogin($dbconn, $input)
+{
 
-        $stmt->bindParam(':e', $input['email']);
-        $stmt->execute();
+    $result = [];
 
-        $count = $stmt->rowCount();
-        $row = $stmt->fetch(PDO::FETCH_BOTH);
+    $stmt = $dbconn->prepare("SELECT * FROM user WHERE email=:e");
 
-        if($count != 1 || !password_verify($input['password'], $row['password'])) {
-            $result[] = false;
-        } else {
-            $result[] = true;
-            $result[] = $row;
-        }
-        return $result;
+    $stmt->bindParam(':e', $input['email']);
+    $stmt->execute();
+
+    $count = $stmt->rowCount();
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+
+    if ($count != 1 || !password_verify($input['password'], $row['password'])) {
+        $result[] = false;
+    } else {
+        $result[] = true;
+        $result[] = $row;
     }
-
-
-   
- 
-
-?>
+    return $result;
+}
