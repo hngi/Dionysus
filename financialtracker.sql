@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2019 at 03:23 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Generation Time: Sep 27, 2019 at 01:42 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -63,7 +63,8 @@ INSERT INTO `user` (`user_ID`, `username`, `email`, `phonenumber`, `password`) V
 (20, NULL, 'sdddd@eddd', NULL, '$2y$10$.Xx9W5b2ctQcuzTN.W2EsObYcoVPIjgSdGgfE.20DoyI.xqPswqSu'),
 (21, 'ww', 'ww@gmail.com', NULL, '$2y$10$1nvgv6zTNI9gXwJja8PM2uVeBoTyn/h.CKfyq5vbjR4XiKxH911qW'),
 (22, 'jo', 'jo@gmail.com', NULL, '$2y$10$eSwpOlpR47EKkulu4cif2eRgMLxVztTGLc26P2YPbBct3NakUb2EC'),
-(23, 'frank', 'frank@gmail.com', NULL, '$2y$10$h/UvRkgIqZ/Ne/1AGSy71OLFoz3MD/c7HRvsYOBSzMslPNt.ygFuC');
+(23, 'frank', 'frank@gmail.com', NULL, '$2y$10$h/UvRkgIqZ/Ne/1AGSy71OLFoz3MD/c7HRvsYOBSzMslPNt.ygFuC'),
+(24, 'danino', 'danino_001@yahoo.com', NULL, '$2y$10$eDxrf/1PzgKe9lPfCLgYPOSwnLNMYdTMjYLPY6X6hoc3oSUJDcLne');
 
 -- --------------------------------------------------------
 
@@ -77,8 +78,17 @@ CREATE TABLE `userexpense` (
   `expense_Date` date DEFAULT NULL,
   `expense_Item` varchar(200) DEFAULT NULL,
   `expense_Cost` varchar(200) DEFAULT NULL,
-  `date_Entry` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `type` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `date_Entry` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userexpense`
+--
+
+INSERT INTO `userexpense` (`userexpense_ID`, `user_ID`, `expense_Date`, `expense_Item`, `expense_Cost`, `type`, `description`, `date_Entry`) VALUES
+(1, 24, '2019-09-28', 'Desiel', '10000', 'cash', '10000', '2019-09-26 23:41:59');
 
 --
 -- Indexes for dumped tables
@@ -104,12 +114,14 @@ ALTER TABLE `userexpense`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `user_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
 --
 -- AUTO_INCREMENT for table `userexpense`
 --
 ALTER TABLE `userexpense`
-  MODIFY `userexpense_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `userexpense_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
