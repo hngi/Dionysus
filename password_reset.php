@@ -84,7 +84,7 @@ if(array_key_exists('submit', $_POST)){
             
                 <nav class="nav">
                      <a class="navbar-brand" href="index.html">
-                       <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                       <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="Financial Tracker logo">
                        Financial Tracker
                      </a>
                      
@@ -103,12 +103,9 @@ if(array_key_exists('submit', $_POST)){
                               <li class="nav-item">
                                 <a class="nav-link" href="#">Contact</a>
                               </li>
-                              <li class="invisible">
-                                  <img class="image" src=""  alt="..." class="img-thumbnail">
-                              </li>
                               <li class="nav-item dropdown invisible">
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="fas fa-user-circle"></i>John Doe
+                                  John Doe
                                       </a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                       <a class="dropdown-item" href="login.html">Sign Out</a>

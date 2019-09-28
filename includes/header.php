@@ -39,7 +39,7 @@ if (isset($_GET['logout'])) {
 
     <nav class="nav">
         <a class="navbar-brand" href="#">
-            <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt=""> Financial Tracker
+            <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="logo"> Financial Tracker
         </a>
 
         <ul class="nav justify-content-center">
@@ -54,7 +54,7 @@ if (isset($_GET['logout'])) {
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user-circle"><?php echo $_SESSION['username']; ?>
+                <?php echo $_SESSION['username']; ?>
                     </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="dashboard.php?logout='1'" id="logout">Sign Out</a>
