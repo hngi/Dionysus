@@ -1,4 +1,4 @@
-body				{
+/*body				{
 							background-color: #D7D7D7;
 							background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
 							background-position: center center;
@@ -12,7 +12,7 @@ a 					{
 }
 a:hover				{
 						text-decoration: none;
-}
+}*/
 h1						{
 							position: absolute;
 							width: 250px;
@@ -31,83 +31,13 @@ h5						{
 							color: rgba(0, 0, 0, 0.51);
 }
 
-button					{
+.btn-outline-primary				{
 							position: absolute; ;
-							width: 200px;
-							height: 65px;
-							left: 3px;
-							top: 490px;
+							width: 200px !important;
+							height: 65px !important;
+							left: 68px;
+							top: 460px;
 							background: #C4C4C4;
-							border-radius: 26px;
-}
-
-/*@kuic's css starts here*/
-
-#login	#signup				{
-						    margin-left: 5%;
-						    border: none;
-						    color:#ACA9A9;
-						    width: 130px;
-						    height: 42px;
-						    font-size: 18px !important;
-						    line-height: 21px !important;
-						    border-radius: 8px;
-						    background-color: none !important;
-}
-
-#login:hover			{
-    						color: #FFFFFF;
-}
-
-.btn{
-						font-style: normal;
-						font-weight: bold;
-						font-size: 24px !important;
-						display: flex;
-						align-items: center;
-						text-align: center;
-						color: #FFFFFF;
-}
-.btn-group{
-					    display: flex;
-					    justify-content: center;
-					    align-content: center;
-					    align-items: center;
-}
-/*#signup{
-					    text-align: center;
-					    border-radius: 8px;
-					    border: 2px solid #5CB0FF;
-					    font-size: 1.2em !important;
-}*/
-#signup:hover{
-					    border: none;
-					    background-color: blue;
-					    color: #FFFFFF;
-}
-
-form{
-					    width: 100%;
-					    margin: 10% auto;
-					    top: -133px;
-
-}
-
-.col-sm-5{
-					    width: 609px;
-					    height: 100vh;
-}
-.col-sm-7{
-					    background-position: center center;
-						background-repeat: no-repeat;
-						background-attachment: fixed;
-						background-size: cover;
-					    background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
-}
-.col-sm-10 {
-					    margin-top: 24px;
-					    height: 50px;
-					    border: none;
-					    border-radius: 3px;
-					    background-color: #EEEEEE;
+							border-radius: 26px !important;
+							font-size: 30px !important;
 }

@@ -1,3 +1,7 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
+*{
+    scroll-behavior: smooth;
+}
 body{
     background-color: #D7D7D7;
     margin: 0;
@@ -7,19 +11,23 @@ body{
 }
 .container-fluid{
     background-color: #D7D7D7;
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
+    height: 100%;
 }
 .nav a{
     color: rgba(3, 3, 3, 0.59);
     font-family: sans-serif;
     font-style: normal;
     font-weight: bold;
+    font-weight: normal;
     font-size: 24px;
     line-height: 28px;
     display: flex;
     align-items: center;
     text-align: center;
+}
+.nav{
+    background-color: #D7D7D7;
 }
 /*.row{
     background-color: #000000;
@@ -28,14 +36,20 @@ body{
     width: 609px;
     height: 100vh;
 }
-.col-sm-7{
-    background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-    background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
+.img-fluid{
+    max-width: 100%;
+    height: auto;
 }
-.col-sm-10 {
+/*.col-sm-7{
+    background-position: center;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+	background-size:contain;
+    background-image: url("");
+    
+}*/
+    .col-sm-10 {
     margin-top: 24px;
     height: 50px;
     border: none;
@@ -46,14 +60,14 @@ form{
     width: 100%;
     margin: 10% auto;
 }
-.btn{
+#submit{
 font-style: normal;
 font-weight: bold;
 font-size: 24px !important;
-display: flex;
 align-items: center;
 text-align: center;
 color: #FFFFFF;
+margin-top: 10%;
 }
 .btn-group{
     display: flex;
@@ -66,12 +80,18 @@ color: #FFFFFF;
     border-radius: 8px;
     border: 2px solid #5CB0FF;
     font-size: 1.2em !important;
+    width: 170px !important;
+    height: 40px;
 }
+#signup:hover{
+    border: none !important;
+}
+/*
 #signup:hover{
     border: none;
     background-color: blue;
     color: #FFFFFF;
-}
+}*/
 #login{
     margin-left: 5%;
     border: none;
@@ -84,7 +104,11 @@ color: #FFFFFF;
     background-color: none !important;
 }
 #login:hover{
-    color: #FFFFFF;
+    color: #FFFFFF !important;
+}
+#login a {
+    text-decoration: none;
+    
 }
 .nav li{
     list-style: none;
@@ -92,4 +116,15 @@ color: #FFFFFF;
 }
 .nav ul{
     margin-left: auto;
+}
+.fa-user-circle{
+    padding-right: 10%;
+    }
+/*#class {
+	display: none
+}*/
+@media only screen and (max-width:576px){
+    .img-fluid{
+    display: none;
+    }
 }
