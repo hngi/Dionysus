@@ -37,24 +37,38 @@ if (isset($_GET['logout'])) {
 <body>
 
 
-    <nav class="nav">
-        <a class="navbar-brand" href="#">
-            <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt=""> Financial Tracker
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
 
-        <ul class="nav justify-content-center">
+        <a class="navbar-brand" href="#"> <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png">
+            <b style="color: grey; margin-left: 20px;">Financial Tracker</b></a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle Navigation">
+        
+        <span class="navbar-toggler-icon"></span>
+    
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarcontent">
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Why Us</a>
+                <a class="nav-link" href="#"><b>Home</b></a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#"><b>Why Us</b></a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="#"><b>Pricing</b></a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#"><b>Contact Us</b></a>
+            </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user-circle"><?php echo $_SESSION['username']; ?>
+                <?php echo $_SESSION['username']; ?>
                     </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="dashboard.php?logout='1'" id="logout">Sign Out</a>
