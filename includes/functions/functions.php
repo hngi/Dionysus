@@ -51,6 +51,44 @@ function doAddExpenseItem($dbconn, $input)
     $stmt->execute($data);
 }
 
+function todayExpenses($dbconn, $userid)
+{
+    $ndate = date('Y-m-d');
+    $stmt = $dbconn->prepare("select sum(expense_Cost) as texpense from userexpense where (expense_Date)='$ndate' && (user_ID='$userid')");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+    return $row['texpense'];
+}
+
+function weeklyExpenses($dbconn, $userid)
+{
+    $pdate = date("Y-m-d", strtotime("-1 week"));
+    $ndate = date("Y-m-d");
+    $stmt = $dbconn->prepare("select sum(expense_Cost) as weeklyexpense from userexpense where ((expense_Date) between '$pdate' and '$ndate') && (user_ID='$userid')");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+    return $row['weeklyexpense'];
+}
+
+function monthlyExpenses($dbconn, $userid)
+{
+    $monthdate = date("Y-m-d", strtotime("-1 month"));
+    $ndate = date("Y-m-d");
+    $stmt = $dbconn->prepare("select sum(expense_Cost) as monthlyexpenses from userexpense where ((expense_Date) between '$monthdate' and '$ndate') && (user_ID='$userid')");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+    return $row['monthlyexpenses'];
+}
+
+function yearlyExpenses($dbconn, $userid)
+{
+    $nyear = date("Y");
+    $stmt = $dbconn->prepare("select sum(expense_Cost) as yearlyexpenses from userexpense where (year(expense_Date)='$nyear') && (user_ID='$userid')");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+    return $row['yearlyexpenses'];
+}
+
 function displayErrors($err, $name)
 {
 
