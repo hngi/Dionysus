@@ -7,6 +7,37 @@ $today_expenses_sum = todayExpenses($conn, $_SESSION['userid']);
 $weekly_expenses_sum = weeklyExpenses($conn, $_SESSION['userid']);
 $monthly_expenses_sum = monthlyExpenses($conn, $_SESSION['userid']);
 $yearly_expenses_sum = yearlyExpenses($conn, $_SESSION['userid']);
+$allexpenses = getAllUserItems($conn, $_SESSION['userid']);
+$graphdata = graphExpenses($conn, $_SESSION['userid']);
+
+$months = "";
+$cost = "";
+if($graphdata){
+    //print_r($graphdata);
+    foreach($graphdata as $get){
+       $dmonth = $get['iMonths'];
+       $dcost = $get['cost'];
+
+        $dateObj   = DateTime::createFromFormat('!m', $dmonth);
+       $monthName = $dateObj->format('F');
+
+       $months .= ", ". $monthName;
+       $cost .= ", ". $dcost;
+
+    }
+
+     $gMonth =  substr($months, 1); 
+     $gCost =  substr($cost, 1);
+
+     $array = explode(',', $gMonth);
+    //print_r($array);
+    $convert = implode("','", $array);
+    //echo '<hr/>';
+     $trime =  trim("'$convert'");
+    
+     
+}
+
 ?>
         <main role="main">
             <section class="panel important">
@@ -74,12 +105,13 @@ $yearly_expenses_sum = yearlyExpenses($conn, $_SESSION['userid']);
 
                         // The data for our dataset
                         data: {
-                            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                            labels:  [ <?php echo $trime; ?>],
                             datasets: [{
                                 label: 'Amount in ₦',
                                 backgroundColor: '#1aa093',
                                 borderColor: '#1aa093',
-                                data: [50000, 45000, 40000, 35000, 30000, 25000, 20000, 15000, 10000, 5000]
+                                data: [ <?php echo $gCost; ?> ]
+                               
                             }]
                         },
 
