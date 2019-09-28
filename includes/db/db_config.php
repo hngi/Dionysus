@@ -20,8 +20,7 @@
     $username = $url["user"];
     $password = $url["pass"];
     $dbname = substr($url["path"], 1);
-    $conn = new PDO($server, $username, $password, $dbname);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+    $conn = new mysqli($server, $username, $password, $dbname);
 
 
 ?>
