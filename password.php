@@ -75,27 +75,35 @@ if(array_key_exists('submit', $_POST)){
     <body>
         <div class="container-fluid">
             
-                <nav class="nav">
-                     <a class="navbar-brand" href="index.php">
-                       <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="Financial Tracker logo">
-                       Financial Tracker
-                     </a>
-                     
-                            <ul class="nav justify-content-center mt-3">
-                              <li class="nav-item active">
-                                <a class="nav-link" href="index.php">Home
-                                      <span class="sr-only">(current)</span>
-                                    </a>
-                              </li>
+                            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+
+                            <a class="navbar-brand" href="#"> <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png">
+                              <b style="color: grey; margin-left: 20px;">Financial Tracker</b></a>
+                          
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle Navigation">
+                            
+                            <span class="navbar-toggler-icon"></span>
+                          
+                          </button>
+                          
+                          <div class="collapse navbar-collapse" id="navbarcontent">
+                            <ul class="navbar-nav ml-auto">
                               <li class="nav-item">
-                                <a class="nav-link" href="#">Why Us</a>
+                                <a class="nav-link" href="#"><b>Home</b></a>
                               </li>
+
                               <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
+                                <a class="nav-link" href="#"><b>Why Us</b></a>
                               </li>
+
                               <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" href="#"><b>Pricing</b></a>
                               </li>
+
+                              <li class="nav-item">
+                                <a class="nav-link" href="#"><b>Contact Us</b></a>
+                              </li>
+
                               <li class="nav-item dropdown invisible">
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   John Doe
