@@ -9,6 +9,7 @@ $monthly_expenses_sum = monthlyExpenses($conn, $_SESSION['userid']);
 $yearly_expenses_sum = yearlyExpenses($conn, $_SESSION['userid']);
 $allexpenses = getAllUserItems($conn, $_SESSION['userid']);
 $graphdata = graphExpenses($conn, $_SESSION['userid']);
+$recent_items = getUserItems($conn, $_SESSION['userid']);
 
 $months = "";
 $cost = "";
@@ -93,7 +94,7 @@ if($graphdata){
                 ?>
                 </h2>
             </section>
-            <section class="panel important">
+            <section class="panel important1">
                 <p><strong><i class="fas fa-signal"></i> Expenses this year</strong></p>
                 <hr>
                 <canvas id="myChart" width="400" height="300"></canvas>
@@ -121,6 +122,39 @@ if($graphdata){
                 </script>
 
             </section>
+
+            <section class="panel important1">
+            <div class="col-sm-12 mb-6">
+            <p></p>
+            <p><strong>Recent Expenses</strong></p>
+            <p></p>
+            <p></p>
+            <table>
+                
+                <?php 
+                if (!$recent_items) {
+                    echo 'You have no Recent Expenses';
+                } else {
+                   echo '<tr>';
+                echo '<th id="type" class="center">type</th>';
+                echo '<th>name</th>';
+                echo '<th id="date">date</th>';
+                echo '<th style="text-align: right" id="amount">amount</th>';
+                echo '</tr>';
+                foreach ($recent_items as $item) {
+                    echo '<tr>';
+                    echo '<td>'.$item['type'] .'</td>';
+                    echo '<td>'.$item['expense_Item'].'</td>';
+                    echo '<td>'.$item['expense_Date'].'</td>';
+                    echo '<td>'.'₦'.$item['expense_Cost'].'</td>';
+                    echo '</tr>';
+                } 
+                }
+                ?>
+                </table>
+                <a href="view_expense.php" class="btn btn-primary text-center"> View All Expenses</a>
+            </div>
+        </section>
 
 
         </main>

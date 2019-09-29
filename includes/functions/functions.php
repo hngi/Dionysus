@@ -135,7 +135,7 @@ function getUserByEmail($dbconn, $email)
 function getUserItems($dbconn, $userid)
 {
     $arr = [];
-    $stmt = $dbconn->prepare("SELECT * FROM userexpense WHERE user_ID=:u ORDER BY expense_Date ASC LIMIT 10");
+    $stmt = $dbconn->prepare("SELECT * FROM userexpense WHERE user_ID=:u ORDER BY expense_Date ASC LIMIT 8");
 
     $stmt->bindParam(':u', $userid);
 
