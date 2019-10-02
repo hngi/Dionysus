@@ -120,13 +120,18 @@ margin-top: 10%;
 .nav ul{
     margin-left: auto;
 }
-.fa-pencil-alt ,.fa-user,.fa-tag,.fa-envelope{
+.fa-pencil-alt ,.fa-user,.fa-tag,.fa-envelope,.{
 float: left;
-
+color: #5CB0FF;
 }
-.fa-user-circle{
-    padding-right: 10%;
-    }
+.fa-user:hover, .fa-envelope:hover,.fa-tag:hover,.fa-pencil-alt:hover{
+    color: #5CB0FF;
+    font-size: 1.5rem;
+}
+.fa-thumbs-up{
+    color: #5CB0FF;
+    font-size: 5rem;
+}
 span #basic-addon1{
     background-color: none !important;
 }
