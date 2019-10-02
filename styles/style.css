@@ -2,6 +2,9 @@
 *{
     scroll-behavior: smooth;
 }
+html{
+    background-color: #D7D7D7;
+}
 body{
     background-color: #D7D7D7;
     margin: 0;
@@ -117,9 +120,16 @@ margin-top: 10%;
 .nav ul{
     margin-left: auto;
 }
+.fa-pencil-alt ,.fa-user,.fa-tag,.fa-envelope{
+float: left;
+
+}
 .fa-user-circle{
     padding-right: 10%;
     }
+span #basic-addon1{
+    background-color: none !important;
+}
 /*#class {
 	display: none
 }*/
