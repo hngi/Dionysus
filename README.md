@@ -77,3 +77,6 @@ The template for your profile page can be found here
 
 **Ensure you read this doc [here](https://docs.google.com/document/d/1TxZqGLsut4ZVJEP6xF-DZGq3goaHfQ2phF-1I3YbrNc/edit?usp=sharing) for complete instructions** <br>
 Failure to do this will warant closing your pull request
+ 
+
+ ## FRONT END SOMEONE SHOULD WORK ON THE FOOTER AS IT IS YET TO BE ASSAIGNED
