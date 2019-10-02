@@ -76,10 +76,17 @@ function weeklyExpenses($dbconn, $userid)
     return $row['weeklyexpense'];
 }
 
+function deleteExpense($dbconn, $recordid)
+{
+    $stmt = $dbconn->prepare("DELETE FROM userexpense WHERE userexpense_ID=$recordid");
+    $stmt->execute();
+    return "Record deleted successfully";
+}
+
 function monthlyExpenses($dbconn, $userid)
 {
     $monthdate = date("m");
-    $monthdate = preg_replace("'0'", "", $monthdate);
+    // $monthdate = preg_replace("'0'", "", $monthdate);
     $stmt = $dbconn->prepare("select sum(expense_Cost) as monthlyexpenses from userexpense where MONTH(expense_Date) = '$monthdate' AND user_ID = '$userid'");
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_BOTH);
@@ -97,6 +104,7 @@ function yearlyExpenses($dbconn, $userid)
 
 function graphExpenses($dbconn, $userid)
 {
+    $arr = [];
     $stmt = $dbconn->prepare("SELECT MONTH(expense_Date) AS iMonths, sum(expense_Cost) AS cost, user_ID as user FROM userexpense WHERE user_ID = $userid GROUP BY MONTH(expense_Date), user_ID");
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -135,7 +143,7 @@ function getUserByEmail($dbconn, $email)
 function getUserItems($dbconn, $userid)
 {
     $arr = [];
-    $stmt = $dbconn->prepare("SELECT * FROM userexpense WHERE user_ID=:u ORDER BY expense_Date ASC LIMIT 10");
+    $stmt = $dbconn->prepare("SELECT * FROM userexpense WHERE user_ID=:u ORDER BY expense_Date DESC LIMIT 8");
 
     $stmt->bindParam(':u', $userid);
 
@@ -151,7 +159,7 @@ function getUserItems($dbconn, $userid)
 function getAllUserItems($dbconn, $userid)
 {
     $arr = [];
-    $stmt = $dbconn->prepare("SELECT * FROM userexpense WHERE user_ID=:u ORDER BY expense_Date ASC");
+    $stmt = $dbconn->prepare("SELECT * FROM userexpense WHERE user_ID=:u ORDER BY expense_Date DESC");
 
     $stmt->bindParam(':u', $userid);
 

@@ -4,6 +4,18 @@ include('includes/functions/functions.php');
 include('includes/header.php');
 include('includes/sidebar.php');
 $allexpenses = getAllUserItems($conn, $_SESSION['userid']);
+if(isset($_GET['delid']))
+{
+$recordid=intval($_GET['delid']);
+$deleteresult=deleteExpense($conn, $recordid);
+if($deleteresult) {
+    $success = "You have successfully deleted an expense";
+    header("location:view_expense.php?success=$success");
+} else {
+    $success = "Something went wrong please check";
+}
+}
+
 ?>
 
 <main role="main">
@@ -12,7 +24,7 @@ $allexpenses = getAllUserItems($conn, $_SESSION['userid']);
             <p></p>
             <h2>All Expenses</h2>
             <p></p>
-            <p></p>
+            <p><?php if(isset($success))  echo $success  ?></p>
             <table>
                 
                 <?php 
@@ -35,7 +47,7 @@ $allexpenses = getAllUserItems($conn, $_SESSION['userid']);
                     echo '<td>'.$item['expense_Date'].'</td>';
                     echo '<td>'.$item['description'].'</td>';
                     echo '<td style="text-align: right" id="amount">'.'₦'.$item['expense_Cost'].'</td>';
-                    
+                    echo '<td><a href="view_expense.php?delid='.$item['userexpense_ID'].'">'.'Delete'.'</a></td>';
                     echo '</tr>';
                 } 
                 }
