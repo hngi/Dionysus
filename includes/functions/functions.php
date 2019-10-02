@@ -76,10 +76,17 @@ function weeklyExpenses($dbconn, $userid)
     return $row['weeklyexpense'];
 }
 
+function deleteExpense($dbconn, $recordid)
+{
+    $stmt = $dbconn->prepare("DELETE FROM userexpense WHERE userexpense_ID=$recordid");
+    $stmt->execute();
+    return "Record deleted successfully";
+}
+
 function monthlyExpenses($dbconn, $userid)
 {
     $monthdate = date("m");
-    $monthdate = preg_replace("'0'", "", $monthdate);
+    // $monthdate = preg_replace("'0'", "", $monthdate);
     $stmt = $dbconn->prepare("select sum(expense_Cost) as monthlyexpenses from userexpense where MONTH(expense_Date) = '$monthdate' AND user_ID = '$userid'");
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_BOTH);
