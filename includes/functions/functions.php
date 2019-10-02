@@ -104,6 +104,7 @@ function yearlyExpenses($dbconn, $userid)
 
 function graphExpenses($dbconn, $userid)
 {
+    $arr = [];
     $stmt = $dbconn->prepare("SELECT MONTH(expense_Date) AS iMonths, sum(expense_Cost) AS cost, user_ID as user FROM userexpense WHERE user_ID = $userid GROUP BY MONTH(expense_Date), user_ID");
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
