@@ -104,7 +104,7 @@ if (array_key_exists('login', $_POST)) {
   <div class="collapse navbar-collapse" id="navbarcontent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#"><b>Home</b></a>
+        <a class="nav-link" href="index.php"><b>Home</b></a>
       </li>
 
       <li class="nav-item">
@@ -145,22 +145,28 @@ if (array_key_exists('login', $_POST)) {
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-md-12 mb-2">
+                              <div class="col-md-12 mb-3 input-group">
                   <label for="validationCustom01"><?php  if(isset($invalid))  echo $invalid ?></label>
                   <?php $mail = displayErrors($error, 'email');
                   echo $mail;
                   ?>
                   <?php  if(isset($success))  echo $success ?>
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1" style="background-color: none !important;"><i class="fas fa-envelope"></i></span>
+                                  </div>
                                   <input type="email" class="form-control" id="validationCustom01" placeholder="email" value="" title="Enter Your Email" name="email" required>
                                   <div class="invalid-feedback">Please enter your email</div>
                               </div>
 
-                              <div class="col-md-12 mb-2">
+                              <div class="col-md-12 mb-3 input-group">
                   <label for="validationCustom01"></label>
                   <?php
                   $pass = displayErrors($error, 'password');
                   echo $pass;
                   ?>
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1" style="background-color: none !important;"><i class="fas fa-lock"></i></span>
+                                  </div>
                                   <input type="password" class="form-control" id="validationCustom01" placeholder="Password" name="password" title="Password" required>
                                   <div class="invalid-feedback">Please enter a password</div>
                               </div>
@@ -187,6 +193,7 @@ if (array_key_exists('login', $_POST)) {
             </div>
         </div>
         <script src="js/signup.js"></script>
+        <script src="https://kit.fontawesome.com/85682eb992.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
