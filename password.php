@@ -69,13 +69,13 @@ function helloEmail()
     try {
       $email = "danielufeli@gmail.com";
       $message = "E be like say you dun forget your password. If this na mistake, just ignore this email and nothing go happen.\r\n". "To reset your password, Follow this link: http://dionysus.6te.net/password_reset.php?user=";
-        $from = new From(null, "noreply@dionysus-team.com");
+        $from = new From("dionysus", "noreply@dionysus-team.com");
         $subject = "Password Recovery";
-        $to = new To(null, $email);
+        $to = new To("User", $email);
         $content = new Content("text/plain", $message);
         $mail = new Mail($from, $to, $subject, $content);
         $personalization = new Personalization();
-        $personalization->addTo(new To(null, "danielufeli@gmail.com"));
+        $personalization->addTo(new To("Daniel Ufeli", "danielufeli@gmail.com"));
         $mail->addPersonalization($personalization);
         //echo json_encode($mail, JSON_PRETTY_PRINT), "\n";
         return $mail;
