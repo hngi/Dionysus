@@ -1,50 +1,75 @@
-<?php 
-include('./includes/db/db_config.php');
-include('./includes/functions/functions.php');
+<?php
+namespace SendGrid;
+
+require 'vendor/autoload.php';
+include './includes/db/db_config.php';
+include './includes/functions/functions.php';
+require "./includes/sendgrid-php/sendgrid-php.php";
+use SendGrid\Mail\Content;
+use SendGrid\Mail\From;
+use SendGrid\Mail\Mail;
+use SendGrid\Mail\Personalization;
+use SendGrid\Mail\To;
+
 $errors = array();
 
 //Validates email and checks to see if email exists upon submit
-if(array_key_exists('submit', $_POST)){
-    
+if (array_key_exists('submit', $_POST)) {
 
-        if(empty($_POST['email'])) {
-            $errors['email'] = "Please enter your email";
-        }
-
-       
-        if(emailDoesNotExist($conn, $_POST['email'])) {
-          $errors['email'] = "Email does not exist";
-            
-        }
-
-
-          // Retrieves user email and user ID
-        $user = getUserByEmail($conn, $_POST);
-
-         $show = $user[0];
-           $email = $user[2];
-          
-
-          if(empty($errors)) {
-
-            // Sends email to user with password recovery link using mail function
-            
-             $message = "E be like say you dun forget your password. If this na mistake, just ignore this email and nothing go happen.\r\n". "To reset your password, Follow this link: http://dionysus.6te.net/password_reset.php?user=$show";
-            $to = $email;
-             $email_subject = "Password Recovery";
-            $headers =  'MIME-Version: 1.0' . "\r\n";
-            $headers.= 'From: Team Dionysus'."\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers.='Reply-To: $email_address'."\r\n";
-            mail($to, $email_subject, $message, $headers);
-
-
-
-           $sent = " Password recovery instructions has been successfully forwarded to your mail";
-        }
+    if (empty($_POST['email'])) {
+        $errors['email'] = "Please enter your email";
     }
 
- ?>
+    if (emailDoesNotExist($conn, $_POST['email'])) {
+        $errors['email'] = "Email does not exist";
+
+    }
+    if (empty($errors)) {
+        $user = getUserByEmail($conn, $_POST);
+        function resetPasswordEmail()
+        {
+            try {
+                // Retrieves user email and user ID
+                global $user;
+                $show = $user[0];
+                $email = $user[2];
+                $message = "Forgot your password? No problem!. \r\n If this is a  mistake, just ignore this email and nothing will happen.\r\n" . "To reset your password, Follow this link: https://boiling-chamber-53204.herokuapp.com//password_reset.php?user=$show";
+                $from = new From("noreply@dionysus-team.com", "noreply@dionysus-team.com");
+                $subject = "Password Recovery";
+                $to = new To($email, $email);
+                $content = new Content("text/html", $message);
+                $mail = new Mail($from, $to, $subject, $content);
+                $personalization = new Personalization();
+                $personalization->addTo(new To($email, $email));
+                $mail->addPersonalization($personalization);
+                return $mail;
+            } catch (\Exception $e) {
+                echo $e->getMessage();
+            }
+            return null;
+        }
+
+        $sent = "";
+        function sendResetPasswordEmail()
+        {
+            $apiKey = getenv('SENDGRID_API_KEY');
+            $sg = new \SendGrid($apiKey);
+            $request_body = resetPasswordEmail();
+
+            try {
+                global $sent;
+                $response = $sg->client->mail()->send()->post($request_body);
+                $sent = "Password recovery instructions has been successfully forwarded to your mail";
+            } catch (Exception $e) {
+                echo 'Caught exception: ', $e->getMessage(), "\n";
+            }
+        }
+        sendResetPasswordEmail();
+    }
+
+}
+
+?>
 
 
 
@@ -74,18 +99,18 @@ if(array_key_exists('submit', $_POST)){
     </head>
     <body>
         <div class="container-fluid">
-            
+
                             <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
 
                             <a class="navbar-brand" href="#"> <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png">
                               <b style="color: grey; margin-left: 20px;">Financial Tracker</b></a>
-                          
+
                           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle Navigation">
-                            
+
                             <span class="navbar-toggler-icon"></span>
-                          
+
                           </button>
-                          
+
                           <div class="collapse navbar-collapse" id="navbarcontent">
                             <ul class="navbar-nav ml-auto">
                               <li class="nav-item">
@@ -114,12 +139,12 @@ if(array_key_exists('submit', $_POST)){
                                   </div>
                               </li>
                             </ul>
-                          
+
                 </nav>
 
             <div class="row">
                     <div class="col-sm-5 mb-4">
-                        <form class="col text-center needs-validation" action="" novalidate onsubmit="validate()" method="POST"> 
+                        <form class="col text-center needs-validation" action="" novalidate onsubmit="validate()" method="POST">
                             <div class="container">
                                 <div class="row">
                                   <div class="col text-center">
@@ -130,27 +155,25 @@ if(array_key_exists('submit', $_POST)){
                               </div>
                               <p class="text-center">Please enter your email address to recover your password </p>
 
-                              <?php 
-                                          $data = displayErrors($errors, 'email');
-                                          echo $data;
+                              <?php
+$data = displayErrors($errors, 'email');
+echo $data;
+if (isset($sent)) {
+    echo $sent;
+}
+?>
 
 
-                                          if(isset($sent))  echo $sent;
-
-
-                                   ?> 
-
-                                 
                               <div class="col-md-12 mb-2">
                                   <label for="validationCustom01"></label>
                                   <div class="input-group-prepend">
                                       <span class="input-group-text" id="basic-addon1" style="background-color: none !important;"><i class="fas fa-envelope"></i></span>
                                   <input type="email" class="form-control" id="validationCustom01" placeholder="Email" value="" title="Enter Your Email" name="email" required></div>
-                                  
+
                                   <div class="invalid-feedback"> Please enter your email address </div>
                               </div>
                               <div class="col-md-12 mb-2">
-                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="submit" id="submit" data-toggle="modal" data-target="#exampleModal">Send</button>
+                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="submit" id="submit" data-toggle="modal" data-target="#exampleModal" onclick="return sendHelloEmail();">Send</button>
                                 <div>
                  <!--  <a class="text-left" href="alt_passwordreset.php">Click here if you could not receive a mail</a> -->
                 </div>
@@ -158,8 +181,8 @@ if(array_key_exists('submit', $_POST)){
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
-                        <img src="https://res.cloudinary.com/kuic/image/upload/v1569576950/Financial%20tracker/Group_3_mj9elh.png" alt="financial tracker image" class="img-fluid mt-3"> 
-                    </div>   
+                        <img src="https://res.cloudinary.com/kuic/image/upload/v1569576950/Financial%20tracker/Group_3_mj9elh.png" alt="financial tracker image" class="img-fluid mt-3">
+                    </div>
             </div>
         </div>
 
