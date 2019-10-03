@@ -25,7 +25,7 @@ if (array_key_exists('submit', $_POST)) {
 
     }
     if (empty($errors)) {
-      $user = getUserByEmail($conn, $_POST);
+        $user = getUserByEmail($conn, $_POST);
         function resetPasswordEmail()
         {
             try {
@@ -49,6 +49,7 @@ if (array_key_exists('submit', $_POST)) {
             return null;
         }
 
+        $sent = "";
         function sendResetPasswordEmail()
         {
             $apiKey = getenv('SENDGRID_API_KEY');
@@ -56,14 +57,16 @@ if (array_key_exists('submit', $_POST)) {
             $request_body = resetPasswordEmail();
 
             try {
+                global $sent;
                 $response = $sg->client->mail()->send()->post($request_body);
                 $sent = "Password recovery instructions has been successfully forwarded to your mail";
             } catch (Exception $e) {
                 echo 'Caught exception: ', $e->getMessage(), "\n";
             }
         }
+        sendResetPasswordEmail();
     }
-    sendResetPasswordEmail();
+
 }
 
 ?>
@@ -155,11 +158,9 @@ if (array_key_exists('submit', $_POST)) {
                               <?php
 $data = displayErrors($errors, 'email');
 echo $data;
-
 if (isset($sent)) {
     echo $sent;
 }
-
 ?>
 
 
