@@ -1,0 +1,715 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: red;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.container-fluid {
+    background-color: red;
+    width: 1440px;
+    height: 1024px;
+}
+
+/*nav {
+    background: white;
+    width: 100%;
+    padding-bottom: 10%;
+}*/
+
+.nav a {
+    color: rgba(3, 3, 3, 0.59);
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+/*.row{
+    background-color: #000000;
+}*/
+
+.col-sm-5 {
+    width: 609px;
+    height: 100vh;
+}
+
+/*.col-sm-7 {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
+}*/
+
+.col-sm-10 {
+    margin-top: 24px;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background-color: #EEEEEE;
+}
+
+form {
+    width: 100%;
+    margin: 10% auto;
+}
+
+.btn {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px !important;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#signup {
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #5CB0FF;
+    font-size: 1.2em !important;
+}
+
+#signup:hover {
+    border: none;
+    background-color: blue;
+    color: #FFFFFF;
+}
+
+#login {
+    margin-left: 5%;
+    border: none;
+    color: #ACA9A9;
+    width: 130px;
+    height: 42px;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    border-radius: 8px;
+    background-color: none !important;
+}
+
+#login:hover {
+    color: #FFFFFF;
+}
+
+.nav li {
+    list-style: none;
+}
+
+.nav ul {
+    margin-left: auto;
+}
+
+/*#class {
+    display: none
+}*/
+.fa-user-circle{
+    padding-right: 10%;
+}
+.row {
+    background-color: #ffffff;
+    padding-top: 0;
+}
+
+.container-fluid>.nav {
+    margin-bottom: 1px;
+}
+
+.image {
+    width: 90%;
+    border-radius: 50%;
+    background: grey;
+    margin-top: 10px;
+}
+
+/*.nav {
+    padding-right: 50px;
+    padding-bottom: 5px;
+}*/
+
+.col-2 {
+    background: #2B2929;
+}
+
+#v-pills-tab a {
+    margin-top: 10px;
+    margin-bottom: 20%;
+    color: #EEEEEE;
+}
+
+.col-10 {
+    padding-top: 10px;
+}
+/*
+.navbar-brand {
+    padding-left: 5%;
+}*/
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.body {
+    background: #E5E5E5;
+    font-family: 'Montserrat', sans-serif;
+    ;
+    color: white;
+    margin-top: -82px;
+}
+/*kuic*/
+.dropdown-menu a{
+    font-size: 12px !important;
+}
+body{
+    background-color: #D7D7D7;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+.container-fluid{
+    background-color: #D7D7D7;
+    width: 100%;
+    height: 100%;
+}
+.nav{
+    background-color: #D7D7D7;
+}
+.nav a{
+    color: rgba(3, 3, 3, 0.59);
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+/*.row{
+    background-color: #000000;
+}*/
+.col-sm-5{
+    width: 609px;
+    height: 100vh;
+}
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+/*.col-sm-7{
+    background-position: center;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+	background-size:contain;
+    background-image: url("");
+    
+}*/
+    .col-sm-10 {
+    margin-top: 24px;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background-color: #EEEEEE;
+}
+form{
+    width: 100%;
+    margin: 10% auto;
+}
+#submit{
+font-style: normal;
+font-weight: bold;
+font-size: 24px !important;
+align-items: center;
+text-align: center;
+color: #FFFFFF;
+margin-top: 10%;
+}
+.btn-group{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+#signup{
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #5CB0FF;
+    font-size: 1.2em !important;
+    width: 170px !important;
+    height: 40px;
+}
+#signup:hover{
+    border: none !important;
+}
+/*
+#signup:hover{
+    border: none;
+    background-color: blue;
+    color: #FFFFFF;
+}*/
+#login{
+    margin-left: 5%;
+    border: none;
+    color:#ACA9A9;
+    width: 130px;
+    height: 42px;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    border-radius: 8px;
+    background-color: none !important;
+}
+#login:hover{
+    color: #FFFFFF !important;
+}
+#login a {
+    text-decoration: none;
+    
+}
+.nav li{
+    list-style: none;
+    padding-left: auto;;
+}
+.nav ul{
+    margin-left: auto;
+}
+
+/*body.login {
+  background-color: white;
+  max-width: 500px;
+  margin: 10vh auto;
+  padding: 1em;
+  height: auto;
+}*/
+
+nav[role=navigation] {
+    background: #7D7D7D;
+    color: #ddd;
+    margin-top: -28px;
+    /* icons */
+}
+
+nav[role=navigation] li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+nav[role=navigation] li a {
+    color: #ddd;
+    text-decoration: none;
+    display: block;
+    padding: .7em;
+}
+
+nav[role=navigation] li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+nav[role=navigation] li a:before {
+    content: "\f248";
+    font-family: FontAwesome;
+    padding-right: .6em;
+}
+
+nav[role=navigation] .dashboard a:before {
+    content: "";
+}
+
+nav[role=navigation] .write a:before {
+    content: "";
+}
+
+nav[role=navigation] .edit a:before {
+    content: "";
+}
+
+nav[role=navigation] .comments a:before {
+    content: "";
+}
+
+nav[role=navigation] .users a:before {
+    content: "";
+}
+
+
+/* current nav item */
+
+.current,
+.dashboard .dashboard a,
+.write .write a,
+.edit .edit a,
+.comments .comments a,
+.users .users a {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+footer[role=contentinfo] {
+    background: slategray;
+    color: #ddd;
+    font-size: .8em;
+    text-align: center;
+    padding: .2em;
+}
+
+
+/* panels */
+
+.panel {
+    background-color: white;
+    color: darkslategray;
+}
+
+.panel>p,
+.panel>h2,
+.panel>ul {
+    margin: 1rem;
+}
+
+
+/* typography */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2,
+h3,
+h4 {
+    font-weight: 300;
+    margin: 0;
+}
+
+h2 {
+    color: #1eb6a7;
+}
+
+b {
+    color: lightsalmon;
+}
+
+.hint {
+    color: lightslategray;
+}
+
+
+/* lists */
+
+ul,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+main li {
+    position: relative;
+    padding-left: 1.2em;
+    margin: .10em 0;
+}
+
+main li:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: .3em;
+    border-left: solid 10px #dde;
+    border-top: solid 5px transparent;
+    border-bottom: solid 5px transparent;
+}
+
+
+/* forms */
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    display: block;
+    border: solid 1px #dde;
+    padding: .5em;
+}
+
+form input:after,
+form textarea:after,
+form select:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+form input[type=checkbox],
+form input[type=radio] {
+    display: inline;
+    width: auto;
+}
+
+form label,
+form legend {
+    display: block;
+    margin: 1em 0 .5em;
+}
+
+form input[type=submit] {
+    background: turquoise;
+    border: none;
+    border-bottom: solid 4px #21ccbb;
+    padding: .7em 3em;
+    margin: 1em 0;
+    color: white;
+    text-shadow: 0 -1px 0 #21ccbb;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: inline-block;
+    width: auto;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    -ms-border-radius: .5em;
+    border-radius: .5em;
+}
+
+form input[type=submit]:hover {
+    background: khaki;
+    border: none;
+    border-bottom: solid 4px #eadc5f;
+    padding: .7em 3em;
+    margin: 1em 0;
+    color: white;
+    text-shadow: 0 -1px 0 #eadc5f;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: inline-block;
+    width: auto;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    -ms-border-radius: .5em;
+    border-radius: .5em;
+}
+
+
+/* feedback */
+
+.error {
+    background-color: #ffe9e0;
+    border-color: #ffc4ad;
+}
+
+label.error {
+    padding: .2em .5em;
+}
+
+.feedback {
+    background: #fcfae6;
+    color: #857a11;
+    margin: 1em;
+    padding: .5em .5em .5em 2em;
+    border: solid 1px khaki;
+}
+
+.feedback:before {
+    content: "";
+    font-family: fontawesome;
+    color: #e4d232;
+    margin-left: -1.5em;
+    margin-right: .5em;
+}
+
+.feedback li:before {
+    border-left-color: #f6f0b9;
+}
+
+.feedback.error {
+    background: #ffe9e0;
+    color: #942a00;
+    margin: 1em;
+    padding: .5em .5em .5em 2em;
+    border: solid 1px lightsalmon;
+}
+
+.feedback.error:before {
+    content: "";
+    font-family: fontawesome;
+    color: #ff5714;
+    margin-left: -1.5em;
+    margin-right: .5em;
+}
+
+.feedback.error li:before {
+    border-left-color: #ffc4ad;
+}
+
+.feedback.success {
+    background: #98eee6;
+    color: #08322e;
+    margin: 1em;
+    padding: .5em .5em .5em 2em;
+    border: solid 1px turquoise;
+}
+
+.feedback.success:before {
+    content: "";
+    font-family: fontawesome;
+    color: #1aa093;
+    margin-left: -1.5em;
+    margin-right: .5em;
+}
+
+.feedback.success li:before {
+    border-left-color: #6ce7db;
+}
+
+
+/* tables */
+
+table {
+    border-collapse: collapse;
+    width: 96%;
+    margin: 2%;
+}
+
+th {
+    text-align: left;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0 10px;
+    padding-bottom: 14px;
+}
+
+tr:not(:first-child):hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+td {
+    line-height: 40px;
+    font-weight: 300;
+    padding: 0 10px;
+}
+
+@media screen and (min-width: 600px) {
+    html,
+    body {
+        height: 100%;
+    }
+    header[role=banner] {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        height: 75px;
+    }
+    header[role=banner] .utilities {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+        color: darkslategray;
+        width: auto;
+    }
+    header[role=banner] .utilities li {
+        display: inline-block;
+    }
+    header[role=banner] .utilities li a {
+        padding: .5em 1em;
+    }
+    nav[role=navigation] {
+        position: fixed;
+        width: 200px;
+        top: 75px;
+        bottom: 0px;
+    }
+    main[role=main] {
+        margin: 75px 0 40px 200px;
+    }
+    main[role=main]:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .panel {
+        margin: 2% 0 0 2%;
+        float: left;
+        width: 96%;
+    }
+    .panel:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .box,
+    .onethird,
+    .twothirds {
+        padding: 1rem;
+    }
+    .onethird {
+        width: 33.333%;
+        float: left;
+    }
+    .twothirds {
+        width: 66%;
+        float: left;
+    }
+    footer[role=contentinfo] {
+        clear: both;
+        margin-left: 200px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    footer[role=contentinfo] {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0px;
+        margin: 0;
+    }
+    .panel {
+        width: 22%;
+        clear: none;
+        text-align: center;
+    }
+    #panel {
+        padding-bottom: 1%;
+    }
+    .panel.important {
+        width: 94%;
+        text-align: center;
+    }
+    .panel.important1 {
+        width: 46%;
+        text-align: center;
+        padding-bottom: 5%;
+        margin-bottom: 5%;
+    }
+    .panel.secondary {
+        width: 23%;
+    }
+}

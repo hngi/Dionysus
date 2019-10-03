@@ -1,0 +1,17 @@
+body					{
+							background-image: url();
+							background-color: ;
+							background-size: cover;
+							background-repeat: no-repeat;
+}
+
+
+.basic :hover			{
+							width: 20%;
+							cursor: pointer;
+}
+
+h2					{
+							margin-bottom: -19px;
+}
+

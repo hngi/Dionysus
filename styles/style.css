@@ -1,0 +1,144 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
+*{
+    scroll-behavior: smooth;
+}
+html{
+    background-color: #D7D7D7;
+}
+body{
+    background-color: #D7D7D7;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+.container-fluid{
+    background-color: #D7D7D7;
+    width: 100%;
+    height: 100%;
+}
+.nav a{
+    color: rgba(3, 3, 3, 0.59);
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.nav{
+    background-color: #D7D7D7;
+}
+/*.row{
+    background-color: #000000;
+}*/
+.col-sm-5{
+    width: 609px;
+    height: 100vh;
+}
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+/*.col-sm-7{
+    background-position: center;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+	background-size:contain;
+    background-image: url("");
+    
+}*/
+    .col-sm-10 {
+    margin-top: 24px;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background-color: #EEEEEE;
+}
+form{
+    width: 100%;
+    margin: 10% auto;
+}
+#submit{
+font-style: normal;
+font-weight: bold;
+font-size: 24px !important;
+align-items: center;
+text-align: center;
+color: #FFFFFF;
+margin-top: 10%;
+}
+.btn-group{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+#signup{
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #5CB0FF;
+    font-size: 1.2em !important;
+    width: 170px !important;
+    height: 40px;
+}
+#signup:hover{
+    border: none !important;
+}
+/*
+#signup:hover{
+    border: none;
+    background-color: blue;
+    color: #FFFFFF;
+}*/
+#login{
+    margin-left: 5%;
+    border: none;
+    color:#ACA9A9;
+    width: 130px;
+    height: 42px;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    border-radius: 8px;
+    background-color: none !important;
+}
+#login:hover{
+    color: #FFFFFF !important;
+}
+#login a {
+    text-decoration: none;
+    
+}
+.nav li{
+    list-style: none;
+    padding-left: auto;;
+}
+.nav ul{
+    margin-left: auto;
+}
+.fa-pencil-alt ,.fa-user,.fa-tag,.fa-envelope,.{
+float: left;
+}
+.fa-user:hover, .fa-envelope:hover, .fa-tag:hover, .fa-pencil-alt:hover, .fa-lock:hover{
+    color: #5CB0FF;
+    font-size: 1.5rem;
+}
+.fa-thumbs-up{
+    color: #5CB0FF;
+    font-size: 5rem;
+}
+span #basic-addon1{
+    background-color: none !important;
+}
+/*#class {
+	display: none
+}*/
+@media only screen and (max-width:576px){
+    .img-fluid{
+    display: none;
+    }
+}
