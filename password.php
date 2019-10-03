@@ -33,7 +33,7 @@ if (array_key_exists('submit', $_POST)) {
                 global $user;
                 $show = $user[0];
                 $email = $user[2];
-                $message = "Forgot your password? No problem!. \r\n If this is a  mistake, just ignore this email and nothing will happen.\r\n" . "To reset your password, Follow this link: http://dionysus.6te.net/password_reset.php?user=$show";
+                $message = "Forgot your password? No problem!. \r\n If this is a  mistake, just ignore this email and nothing will happen.\r\n" . "To reset your password, Follow this link: https://boiling-chamber-53204.herokuapp.com//password_reset.php?user=$show";
                 $from = new From("noreply@dionysus-team.com", "noreply@dionysus-team.com");
                 $subject = "Password Recovery";
                 $to = new To($email, $email);
@@ -57,9 +57,7 @@ if (array_key_exists('submit', $_POST)) {
 
             try {
                 $response = $sg->client->mail()->send()->post($request_body);
-                print $response->statusCode() . "\n";
-                print_r($response->headers());
-                print $response->body() . "\n";
+                $sent = "Password recovery instructions has been successfully forwarded to your mail";
             } catch (Exception $e) {
                 echo 'Caught exception: ', $e->getMessage(), "\n";
             }
