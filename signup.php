@@ -179,7 +179,7 @@ if(array_key_exists('submit', $_POST)){
                               </div>
                               <p class="text-center mb-4">OR</p>
                               <div class="col-md-12 mb-2">
-                                <button class="btn btn-primary col-md-12 mb-4 text-center btn-danger" name="submit" type="submit"><span class="btn-label p-2"><i class="fab fa-google-plus-g"></i></span>Login with Google</button>
+                                <button class="btn btn-primary col-md-12 mb-4 text-center btn-danger" name="submit" type="submit"><span class="btn-label p-2"><i class="fab fa-google-plus-g"></i></span>SignUp with Google</button>
                               </div>
                         </form>
                     </div>
