@@ -1,6 +1,8 @@
 <?php 
+include('vendor/autoload.php');
 include('./includes/db/db_config.php');
 include('./includes/functions/functions.php');
+require("./includes/sendgrid-php/sendgrid-php.php");
 $errors = array();
 
 //Validates email and checks to see if email exists upon submit
@@ -31,16 +33,30 @@ if(array_key_exists('submit', $_POST)){
             
              $message = "E be like say you dun forget your password. If this na mistake, just ignore this email and nothing go happen.\r\n". "To reset your password, Follow this link: http://dionysus.6te.net/password_reset.php?user=$show";
             $to = $email;
-             $email_subject = "Password Recovery";
-            $headers =  'MIME-Version: 1.0' . "\r\n";
-            $headers.= 'From: Team Dionysus'."\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers.='Reply-To: $email_address'."\r\n";
-            mail($to, $email_subject, $message, $headers);
+          //    $email_subject = "Password Recovery";
+          //   $headers =  'MIME-Version: 1.0' . "\r\n";
+          //   $headers.= 'From: Team Dionysus'."\r\n";
+          //   $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+          //   $headers.='Reply-To: $email_address'."\r\n";
+          //   mail($to, $email_subject, $message, $headers);
 
 
 
-           $sent = " Password recovery instructions has been successfully forwarded to your mail";
+          //  $sent = " Password recovery instructions has been successfully forwarded to your mail";
+
+$from = new SendGrid\Email(null, "noreply@dionysus-team.com");
+$subject = "Password Recovery";
+$to = new SendGrid\Email(null, $email);
+$content = new SendGrid\Content("text/html", $message);
+$mail = new SendGrid\Mail($from, $subject, $to, $content);
+
+$apiKey = getenv('SENDGRID_API_KEY');
+$sg = new \SendGrid($apiKey);
+
+$response = $sg->client->mail()->send()->post($mail);
+echo $response->statusCode();
+echo $response->headers();
+echo $response->body();
         }
     }
 
