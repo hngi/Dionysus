@@ -110,9 +110,7 @@ if(array_key_exists('submit', $_POST)){
                                       </a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                       <a class="dropdown-item" href="login.html">Sign Out</a>
-                                      <a class="dropdown-item" href="#">Another action</a>
-                                      <div class="dropdown-divider"></div>
-                                      <a class="dropdown-item" href="#">Something else here</a>
+                                      <a class="dropdown-item" href="#">Update Profile</a>
                                   </div>
                               </li>
                             </ul>
@@ -147,8 +145,7 @@ if(array_key_exists('submit', $_POST)){
                                   <label for="validationCustom01"></label>
                                   <div class="input-group-prepend">
                                       <span class="input-group-text" id="basic-addon1" style="background-color: none !important;"><i class="fas fa-envelope"></i></span>
-                                  </div>
-                                  <input type="email" class="form-control" id="validationCustom01" placeholder="Email" value="" title="Enter Your Email" name="email" required>
+                                  <input type="email" class="form-control" id="validationCustom01" placeholder="Email" value="" title="Enter Your Email" name="email" required></div>
                                   
                                   <div class="invalid-feedback"> Please enter your email address </div>
                               </div>

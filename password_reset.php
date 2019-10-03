@@ -148,8 +148,7 @@ if(array_key_exists('submit', $_POST)){
                                   <label for="validationCustom01"></label>
                                   <div class="input-group-prepend">
                                       <span class="input-group-text" id="basic-addon1" style="background-color: none !important;"><i class="fas fa-lock"></i></span>
-                                  </div>
-                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Enter New Password" value="" title="Enter Your New Password" name="password" required>
+                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Enter New Password" value="" title="Enter Your New Password" name="password" required></div>
                                   
                                   <div class="invalid-feedback"></div>
                               </div>

@@ -149,10 +149,9 @@ if(array_key_exists('submit', $_POST)){
                               <div class="col-md-12 mb-3">
                                   <label for="validationCustom01"></label>
                                   <div class="input-group-prepend">
-                                      <span class="input-group-text" id="basic-addon1" style="background-color: none !important;"><i class="fas fa-envelope"></i></span>
-                                  </div>
-                                  <input type="email" class="form-control" id="validationCustom02" placeholder="Email Address" value="" title="Enter Your Email Address" name="email" required>
-                                  <div class="invalid-feedback">Please enter your email address</div>
+                                      <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                                  <input type="email" class="form-control" id="validationCustom01" placeholder="Email" value="" title="Enter Your Email" name="email" required></div>
+                                  <div class="invalid-feedback">Please enter your email</div>
                               </div>
                               <div class="col-md-12 mb-3 input-group">
                                   <label for="validationCustom01"></label>
@@ -176,7 +175,11 @@ if(array_key_exists('submit', $_POST)){
                                   <div class="invalid-feedback">Please confirm your password</div>
                               </div>
                               <div class="col-md-12 mb-2">
-                                <button class="btn btn-primary col-md-12 mb-4 text-center" name="submit" type="submit" id="submit">Sign up</button>
+                                <button class="btn btn-primary col-md-12 mb-4 text-center" name="submit" type="submit" >Sign up</button>
+                              </div>
+                              <p class="text-center mb-4">OR</p>
+                              <div class="col-md-12 mb-2">
+                                <button class="btn btn-primary col-md-12 mb-4 text-center btn-danger" name="submit" type="submit"><span class="btn-label p-2"><i class="fab fa-google-plus-g"></i></span>Login with Google</button>
                               </div>
                         </form>
                     </div>
