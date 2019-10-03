@@ -1,8 +1,8 @@
 <?php 
-include('vendor/autoload.php');
+// include('vendor/autoload.php');
 include('./includes/db/db_config.php');
 include('./includes/functions/functions.php');
-require("./includes/sendgrid-php/sendgrid-php.php");
+include("./includes/sendgrid-php/sendgrid-php.php");
 $errors = array();
 
 //Validates email and checks to see if email exists upon submit
