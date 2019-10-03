@@ -5,6 +5,28 @@
         position: absolute;
         top: 8px;
         left: 16px;
-        font-size: 18px;
+        
         
     }
+
+div, li{
+font-size: 120%;
+font-family: Sans-serif;
+text-decoration: none;
+}
+
+li:hover{
+text-decoration: none;
+}
+
+div:hover{
+text-decoration: none;
+}
+
+@media only screen and (max-width: 600px){
+div, li{
+font-size: 100%;
+font-family: Sans-serif;
+text-decoration: none;
+}
+}
