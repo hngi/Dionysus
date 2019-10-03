@@ -64,7 +64,7 @@ if(array_key_exists('submit', $_POST)){
         <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
         <link rel="stylesheet" type="text/css" href="styles/style.css">
-        
+        <link rel="stylesheet" type="text/css" href="assets/css/faqq.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
@@ -168,6 +168,20 @@ if(array_key_exists('submit', $_POST)){
                     </div>   
             </div>
         </div>
+
+
+        <footer class="cd-header flex flex-row flex-center" >
+          <ul>
+          <li><a href = "FAQ.html"><i class="fa fa-question" ></i> FAQs</a></li>
+          <li><a href = "https://boiling-chamber-53204.herokuapp.com/index.php#"> <i class="fa fa-home" ></i>Home</a></li>
+          <li><a href = "#"> <i class="fa fa-book" aria-hidden="true"></i>About 	Us</a></li>
+          <li><a href = "https://boiling-chamber-53204.herokuapp.com/signup.php"><i class="fa fa-user" aria-hidden="true"></i>Sign Up</a></li>
+          <li><a href = "#"><i class="fa fa-twitter-square" ></i> Follow Us on twitter</a></li>
+          <li><a href = "#"> <i class="fa fa-facebook-official" ></i> Like us on facebook</a></li>
+          <li><a href = "contact.html"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
+          
+          </ul>
+        </footer>
         <script src="js/signup.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -5,7 +5,8 @@
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<head>
+  <link rel="stylesheet" type="text/css" href="assets/css/faqq.css">
+  <head>
 	<title>Financial Tracker</title>
 </head>
 <body>
@@ -72,6 +73,19 @@
             </div>  
 	</div>
 </div>
+
+<footer class="cd-header flex flex-row flex-center" >
+	<ul>
+	<li><a href = "FAQ.html"><i class="fa fa-question" ></i> FAQs</a></li>
+	<li><a href = "https://boiling-chamber-53204.herokuapp.com/index.php#"> <i class="fa fa-home" ></i>Home</a></li>
+	<li><a href = "#"> <i class="fa fa-book" aria-hidden="true"></i>About 	Us</a></li>
+	<li><a href = "https://boiling-chamber-53204.herokuapp.com/signup.php"><i class="fa fa-user" aria-hidden="true"></i>Sign Up</a></li>
+	<li><a href = "#"><i class="fa fa-twitter-square" ></i> Follow Us on twitter</a></li>
+	<li><a href = "#"> <i class="fa fa-facebook-official" ></i> Like us on facebook</a></li>
+	<li><a href = "contact.html"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
+	
+	</ul>
+  </footer>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

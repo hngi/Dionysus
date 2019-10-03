@@ -8,9 +8,11 @@
         
         
     }
-
-div, li{
+li{
 font-size: 120%;
+}
+div{
+font-size: 110%;
 font-family: Sans-serif;
 text-decoration: none;
 }
@@ -22,7 +24,12 @@ text-decoration: none;
 div:hover{
 text-decoration: none;
 }
-
+.footer{
+    font-size: large;
+}
+footer{
+    background: rgb(161, 205, 241);
+}
 @media only screen and (max-width: 600px){
 div, li{
 font-size: 100%;

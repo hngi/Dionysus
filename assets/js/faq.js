@@ -1,5 +1,5 @@
 (function(){
-	// FAQ Template - by CodyHouse.co
+	
   var FaqTemplate = function(element) {
 		this.element = element;
 		this.sections = this.element.getElementsByClassName('cd-faq__group');

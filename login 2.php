@@ -84,6 +84,7 @@ if (array_key_exists('login', $_POST)) {
         <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
         <link rel="stylesheet" type="text/css" href="styles/style.css"> 
+        <link rel="stylesheet" type="text/css" href="assets/css/faqq.css"> 
     </head>
     <body>
         <div class="container-fluid">
@@ -192,6 +193,20 @@ if (array_key_exists('login', $_POST)) {
                     </div>  
             </div>
         </div>
+
+
+        <footer class="cd-header flex flex-row flex-center" >
+	<ul>
+	<li><a href = "FAQ.html"><i class="fa fa-question" ></i> FAQs</a></li>
+	<li><a href = "https://boiling-chamber-53204.herokuapp.com/index.php#"> <i class="fa fa-home" ></i>Home</a></li>
+	<li><a href = "#"> <i class="fa fa-book" aria-hidden="true"></i>About 	Us</a></li>
+	<li><a href = "https://boiling-chamber-53204.herokuapp.com/signup.php"><i class="fa fa-user" aria-hidden="true"></i>Sign Up</a></li>
+	<li><a href = "#"><i class="fa fa-twitter-square" ></i> Follow Us on twitter</a></li>
+	<li><a href = "#"> <i class="fa fa-facebook-official" ></i> Like us on facebook</a></li>
+	<li><a href = "contact.html"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
+	
+	</ul>
+  </footer>
         <script src="js/signup.js"></script>
 <script src="js/jquery.slim.min.js" ></script> 
     <script src="js/bootstrap.min.js" ></script>
