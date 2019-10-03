@@ -1,8 +1,19 @@
 <?php 
-// include('vendor/autoload.php');
+namespace SendGrid;
+require('vendor/autoload.php');
 include('./includes/db/db_config.php');
 include('./includes/functions/functions.php');
-include("./includes/sendgrid-php/sendgrid-php.php");
+require("./includes/sendgrid-php/sendgrid-php.php");
+use SendGrid\Mail\To;
+use SendGrid\Mail\Cc;
+use SendGrid\Mail\Bcc;
+use SendGrid\Mail\From;
+use SendGrid\Mail\Content;
+use SendGrid\Mail\Mail;
+use SendGrid\Mail\Personalization;
+use SendGrid\Mail\Subject;
+use SendGrid\Mail\Header;
+
 $errors = array();
 
 //Validates email and checks to see if email exists upon submit
@@ -56,6 +67,8 @@ if(array_key_exists('submit', $_POST)){
 function helloEmail()
 {
     try {
+      $email = "danielufeli@gmail.com";
+      $message = "E be like say you dun forget your password. If this na mistake, just ignore this email and nothing go happen.\r\n". "To reset your password, Follow this link: http://dionysus.6te.net/password_reset.php?user=";
         $from = new From(null, "noreply@dionysus-team.com");
         $subject = "Password Recovery";
         $to = new To(null, $email);
@@ -88,8 +101,9 @@ function sendHelloEmail()
     }
 }
         }
-    }
-    sendHelloEmail();
+        sendHelloEmail();
+      }
+      
  ?>
 
 
@@ -196,7 +210,7 @@ function sendHelloEmail()
                                   <div class="invalid-feedback"> Please enter your email address </div>
                               </div>
                               <div class="col-md-12 mb-2">
-                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="submit" id="submit" data-toggle="modal" data-target="#exampleModal">Send</button>
+                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="submit" id="submit" data-toggle="modal" data-target="#exampleModal" onclick="return sendHelloEmail();">Send</button>
                                 <div>
                  <!--  <a class="text-left" href="alt_passwordreset.php">Click here if you could not receive a mail</a> -->
                 </div>
