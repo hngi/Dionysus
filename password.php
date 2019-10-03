@@ -71,7 +71,7 @@ function helloEmail()
       $message = "E be like say you dun forget your password. If this na mistake, just ignore this email and nothing go happen.\r\n". "To reset your password, Follow this link: http://dionysus.6te.net/password_reset.php?user=";
         $from = new From("dionysus", "noreply@dionysus-team.com");
         $subject = "Password Recovery";
-        $to = new To("User", $email);
+        $to = new To("User", "$email");
         $content = new Content("text/plain", $message);
         $mail = new Mail($from, $to, $subject, $content);
         $personalization = new Personalization();
