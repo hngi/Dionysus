@@ -13,7 +13,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-mysqli": "*"
+        "ext-mysqli": "*",
+        "sendgrid/sendgrid": "~5.0.9"
     },
     "platform-dev": []
 }
