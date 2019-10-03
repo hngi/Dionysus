@@ -102,6 +102,29 @@ function yearlyExpenses($dbconn, $userid)
     return $row['yearlyexpenses'];
 }
 
+function expenseReports($dbconn, $userid, $fdate, $tdate)
+{
+    $arr = [];
+    $dateformat = '"%Y-%m-%d"';
+    $stmt = $dbconn->prepare("SELECT * FROM userexpense WHERE user_ID = $userid and date_format(expense_Date, $dateformat) >= '$fdate' and date_format(expense_Date, $dateformat) <= '$tdate'");
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $arr[] = $row;
+    }
+    return $arr;
+}
+
+function expenseReportsPdf($dbconn)
+{
+    $arr = [];
+    $stmt = $dbconn->prepare("SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE  `TABLE_SCHEMA`='financialtracker' AND `TABLE_NAME`='userexpense'");
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $arr[] = $row;
+    }
+    return $arr;
+}
+
 function graphExpenses($dbconn, $userid)
 {
     $arr = [];
