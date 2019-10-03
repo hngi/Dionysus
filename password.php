@@ -53,14 +53,43 @@ $mail = new SendGrid\Mail($from, $subject, $to, $content);
 $apiKey = getenv('SENDGRID_API_KEY');
 $sg = new \SendGrid($apiKey);
 
-$response = $sg->client->mail()->send()->post($mail);
-echo $response->statusCode();
-echo $response->headers();
-echo $response->body();
-$sent = " Password recovery instructions has been successfully forwarded to your mail";
+function helloEmail()
+{
+    try {
+        $from = new From(null, "noreply@dionysus-team.com");
+        $subject = "Password Recovery";
+        $to = new To(null, $email);
+        $content = new Content("text/plain", $message);
+        $mail = new Mail($from, $to, $subject, $content);
+        $personalization = new Personalization();
+        $personalization->addTo(new To(null, "danielufeli@gmail.com"));
+        $mail->addPersonalization($personalization);
+        //echo json_encode($mail, JSON_PRETTY_PRINT), "\n";
+        return $mail;
+    } catch (\Exception $e) {
+        echo $e->getMessage();
+    }
+    return null;
+}
+
+function sendHelloEmail()
+{
+    $apiKey = getenv('SENDGRID_API_KEY');
+    $sg = new \SendGrid($apiKey);
+    $request_body = helloEmail();
+    
+    try {
+        $response = $sg->client->mail()->send()->post($request_body);    
+        print $response->statusCode() . "\n";
+        print_r($response->headers());
+        print $response->body() . "\n";
+    } catch (Exception $e) {
+        echo 'Caught exception: ',  $e->getMessage(), "\n";
+    }
+}
         }
     }
-
+    sendHelloEmail();
  ?>
 
 
