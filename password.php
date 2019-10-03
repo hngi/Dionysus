@@ -44,14 +44,14 @@ if(array_key_exists('submit', $_POST)){
 
           //  $sent = " Password recovery instructions has been successfully forwarded to your mail";
 
-$from = new SendGrid\Email(null, "noreply@dionysus-team.com");
-$subject = "Password Recovery";
-$to = new SendGrid\Email(null, $email);
-$content = new SendGrid\Content("text/html", $message);
-$mail = new SendGrid\Mail($from, $subject, $to, $content);
+// $from = new SendGrid\Email(null, "noreply@dionysus-team.com");
+// $subject = "Password Recovery";
+// $to = new SendGrid\Email(null, $email);
+// $content = new SendGrid\Content("text/html", $message);
+// $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-$apiKey = getenv('SENDGRID_API_KEY');
-$sg = new \SendGrid($apiKey);
+// $apiKey = getenv('SENDGRID_API_KEY');
+// $sg = new \SendGrid($apiKey);
 
 function helloEmail()
 {
