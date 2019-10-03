@@ -57,6 +57,7 @@ $response = $sg->client->mail()->send()->post($mail);
 echo $response->statusCode();
 echo $response->headers();
 echo $response->body();
+$sent = " Password recovery instructions has been successfully forwarded to your mail";
         }
     }
 
