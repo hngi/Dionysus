@@ -13,19 +13,19 @@
             
 		<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
 
-		<a class="navbar-brand" href="index.php"> <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png">
+		<a class="navbar-brand" href="index.php"><img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png">
 			<b style="color: grey; margin-left: 20px;">Financial Tracker</b></a>
 	
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle Navigation">
-		
-		<span class="navbar-toggler-icon"></span>
-	
-	</button>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle Navigation">
+
+				<span class="navbar-toggler-icon"></span>
+
+			</button>
 	
 	<div class="collapse navbar-collapse" id="navbarcontent">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="#"><b>Home</b></a>
+				<a class="nav-link" href="index.php"><b>Home</b></a>
 			</li>
 
 			<li class="nav-item">
@@ -33,7 +33,7 @@
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="#"><b>Pricing</b></a>
+				<a class="nav-link" href="pricing.html"><b>Pricing</b></a>
 			</li>
 
 			<li class="nav-item">
@@ -50,13 +50,11 @@
                                       </a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                       <a class="dropdown-item" href="login.html">Sign Out</a>
-                                      <a class="dropdown-item" href="#">Another action</a>
-                                      <div class="dropdown-divider"></div>
-                                      <a class="dropdown-item" href="#">Something else here</a>
+                                      <a class="dropdown-item" href="#">Update Profile</a>
                                   </div>
                               </li>
 					</ul>
-				  
+				</div>
 		</nav>
 
 	<div class="row">

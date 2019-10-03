@@ -1,6 +1,7 @@
 <?php 
 include('./includes/db/db_config.php');
 include('./includes/functions/functions.php');
+include('./includes/pass_mail.php');
 $errors = array();
 
 //Validates email and checks to see if email exists upon submit
@@ -23,24 +24,18 @@ if(array_key_exists('submit', $_POST)){
 
          $show = $user[0];
            $email = $user[2];
+         $vtoken = mt_rand();
           
 
           if(empty($errors)) {
 
             // Sends email to user with password recovery link using mail function
             
-             $message = "E be like say you dun forget your password. If this na mistake, just ignore this email and nothing go happen.\r\n". "To reset your password, Follow this link: http://dionysus.6te.net/password_reset.php?user=$show";
-            $to = $email;
-             $email_subject = "Password Recovery";
-            $headers =  'MIME-Version: 1.0' . "\r\n";
-            $headers.= 'From: Team Dionysus'."\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers.='Reply-To: $email_address'."\r\n";
-            mail($to, $email_subject, $message, $headers);
-
-
-
-           $sent = " Password recovery instructions has been successfully forwarded to your mail";
+             $msg = "E be like say you dun forget your password. If this na mistake, just ignore this email and nothing go happen.\r\n". "To reset your password, Follow this link: https://boiling-chamber-53204.herokuapp.com/password_reset.php?user=$show&&token=$vtoken";
+            $to = $email;  
+            $token = $vtoken; 
+            send_mail($to, $token, $msg); 
+ 
         }
     }
 
@@ -69,7 +64,7 @@ if(array_key_exists('submit', $_POST)){
         <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
         <link rel="stylesheet" type="text/css" href="styles/style.css">
-        <link rel="stylesheet" href="assets/css/faq.css">
+        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
@@ -89,7 +84,7 @@ if(array_key_exists('submit', $_POST)){
                           <div class="collapse navbar-collapse" id="navbarcontent">
                             <ul class="navbar-nav ml-auto">
                               <li class="nav-item">
-                                <a class="nav-link" href="index.php"><b>Home</b></a>
+                                <a class="nav-link" href="#"><b>Home</b></a>
                               </li>
 
                               <li class="nav-item">
@@ -101,7 +96,7 @@ if(array_key_exists('submit', $_POST)){
                               </li>
 
                               <li class="nav-item">
-                                <a class="nav-link" href="contact.html"><b>Contact Us</b></a>
+                                <a class="nav-link" href="#"><b>Contact Us</b></a>
                               </li>
 
                               <li class="nav-item dropdown invisible">
@@ -110,7 +105,9 @@ if(array_key_exists('submit', $_POST)){
                                       </a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                       <a class="dropdown-item" href="login.html">Sign Out</a>
-                                      <a class="dropdown-item" href="#">Update Profile</a>
+                                      <a class="dropdown-item" href="#">Another action</a>
+                                      <div class="dropdown-divider"></div>
+                                      <a class="dropdown-item" href="#">Something else here</a>
                                   </div>
                               </li>
                             </ul>
@@ -118,7 +115,18 @@ if(array_key_exists('submit', $_POST)){
                 </nav>
 
             <div class="row">
-                    <div class="col-sm-5 mb-4">
+                    <div class="col-sm-5 mb-4"> 
+                        <?php 
+                        if(isset($_GET['msg'])) {
+
+                        echo '<div class="alert alert-success">Password recovery mail has been sent to your email</div>';
+
+                        }elseif(isset($_GET['err_msg'])) {
+
+                        echo '<div class="alert alert-danger">Sorry Email dont exist</div>';
+
+                        } 
+                        ?> 
                         <form class="col text-center needs-validation" action="" novalidate onsubmit="validate()" method="POST"> 
                             <div class="container">
                                 <div class="row">
@@ -143,9 +151,7 @@ if(array_key_exists('submit', $_POST)){
                                  
                               <div class="col-md-12 mb-2">
                                   <label for="validationCustom01"></label>
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text" id="basic-addon1" style="background-color: none !important;"><i class="fas fa-envelope"></i></span>
-                                  <input type="email" class="form-control" id="validationCustom01" placeholder="Email" value="" title="Enter Your Email" name="email" required></div>
+                                  <input type="email" class="form-control" id="validationCustom01" placeholder="Email" value="" title="Enter Your Email" name="email" required>
                                   
                                   <div class="invalid-feedback"> Please enter your email address </div>
                               </div>
@@ -162,20 +168,7 @@ if(array_key_exists('submit', $_POST)){
                     </div>   
             </div>
         </div>
-
-        <footer class="cd-header flex flex-row flex-center" >
-<ul>
-<li><a href = "FAQ.html">FAQ</a></li>
-<li><a href = "https://boiling-chamber-53204.herokuapp.com/index.php#">Home</a></li>
-<li><a href = "#">About 	Us</a></li>
-<li><a href = "https://boiling-chamber-53204.herokuapp.com/signup.php">Sign Up</a></li>
-<li><a href = "#">Follow Us on twitter</a></li>
-<li><a href = "#">Like us on facebook</a></li>
-<li><a href = "contact.html">contact us</a></li>
-
-</ul>
         <script src="js/signup.js"></script>
-        <script src="https://kit.fontawesome.com/85682eb992.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
