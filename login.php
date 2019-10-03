@@ -125,9 +125,7 @@ if (array_key_exists('login', $_POST)) {
                                       </a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                       <a class="dropdown-item" href="login.html">Sign Out</a>
-                                      <a class="dropdown-item" href="#">Another action</a>
-                                      <div class="dropdown-divider"></div>
-                                      <a class="dropdown-item" href="#">Something else here</a>
+                                      <a class="dropdown-item" href="#">Update Profile</a>
                                   </div>
                               </li>
                             </ul>
@@ -146,24 +144,24 @@ if (array_key_exists('login', $_POST)) {
                                 </div>
                               </div>
                               <div class="col-md-12 mb-3 input-group">
-                  <label for="validationCustom01"><?php  if(isset($invalid))  echo $invalid ?></label>
-                  <?php $mail = displayErrors($error, 'email');
-                  echo $mail;
-                  ?>
-                  <?php  if(isset($success))  echo $success ?>
+                              <label for="validationCustom01"><?php  if(isset($invalid))  echo $invalid ?></label>
+                              <?php $mail = displayErrors($error, 'email');
+                              echo $mail;
+                              ?>
+                              <?php  if(isset($success))  echo $success ?>
                                   <div class="input-group-prepend">
-                                      <span class="input-group-text" id="basic-addon1" style="background-color: none !important;"><i class="fas fa-envelope"></i></span>
+                                      <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
                                   </div>
-                                  <input type="email" class="form-control" id="validationCustom01" placeholder="email" value="" title="Enter Your Email" name="email" required>
+                                  <input type="email" class="form-control" id="validationCustom01" placeholder="Email" value="" title="Enter Your Email" name="email" required>
                                   <div class="invalid-feedback">Please enter your email</div>
                               </div>
 
                               <div class="col-md-12 mb-3 input-group">
-                  <label for="validationCustom01"></label>
-                  <?php
-                  $pass = displayErrors($error, 'password');
-                  echo $pass;
-                  ?>
+                              <label for="validationCustom01"></label>
+                              <?php
+                              $pass = displayErrors($error, 'password');
+                              echo $pass;
+                              ?>
                                   <div class="input-group-prepend">
                                       <span class="input-group-text" id="basic-addon1" style="background-color: none !important;"><i class="fas fa-lock"></i></span>
                                   </div>
@@ -171,20 +169,25 @@ if (array_key_exists('login', $_POST)) {
                                   <div class="invalid-feedback">Please enter a password</div>
                               </div>
 
+                              
+                              <div>
+                                <a class="text-center ml-4" href="password.php">Forgot Password</a>
+                              </div>
+                              <br>
+
+                              <div class="form-check p-3 ml-4">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                  Remember Me
+                                </label>
+                              </div>
                               <div class="col-md-12 mb-2">
                                 <input class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="login" value="Login" id="login_btn">
-                </div>
-                <div>
-                  <a class="text-center" href="password.php">Forgot Password</a>
-                </div>
-                <br>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                  <label class="form-check-label" for="defaultCheck1">
-                    Remember Me
-                  </label>
-                  </div>
+                              </div>
+                              <p class="text-center mb-4">OR</p>
+                              <div class="col-md-12 mb-2">
+                                <button class="btn btn-primary col-md-12 mb-4 text-center btn-danger" name="submit" type="submit"><span class="btn-label p-2"><i class="fab fa-google-plus-g"></i></span>Login with Google</button>
+                              </div>
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
