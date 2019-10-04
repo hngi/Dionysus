@@ -1,50 +1,47 @@
-<?php 
+<?php
 
-include('./includes/db/db_config.php');
-include('./includes/functions/functions.php');
+include './includes/db/db_config.php';
+include './includes/functions/functions.php';
 $errors = array();
-if(array_key_exists('submit', $_POST)){
-    
-    if(empty($_POST['name'])) {
-            $errors['name'] = "Please enter your user name";
-        }
-        
+if (array_key_exists('submit', $_POST)) {
 
-        if(empty($_POST['email'])) {
-            $errors['email'] = "Please enter your email";
-        }
-
-       
-        if(doesEmailExist($conn, $_POST['email'])) {
-            $errors['email'] = "Email already exists";
-            
-        }
-
-        if(empty($_POST['password'])) {
-            $errors['password'] = "Please enter your password";
-        }
-
-        if(empty($_POST['pword'])) {
-            $errors['pword'] = "Please confirm your password";
-        }
-
-        if($_POST['password'] != $_POST['pword']) {
-            $errors['pword'] = "Passwords do not match";
-        }
-
-        if(empty($errors)) {
-            
-            $clean = array_map('trim', $_POST);
-
-            doUserRegister($conn, $clean);
-
-            $success = "Registration successful | Kindly login to continue";
-            header("location:login.php?success=$success");
-        }
+    if (empty($_POST['name'])) {
+        $errors['name'] = "Please enter your user name";
     }
 
+    if (empty($_POST['email'])) {
+        $errors['email'] = "Please enter your email";
+    }
 
- ?>
+    if (doesEmailExist($conn, $_POST['email'])) {
+        $errors['email'] = "Email already exists";
+
+    }
+
+    if (empty($_POST['password'])) {
+        $errors['password'] = "Please enter your password";
+    }
+
+    if (empty($_POST['pword'])) {
+        $errors['pword'] = "Please confirm your password";
+    }
+
+    if ($_POST['password'] != $_POST['pword']) {
+        $errors['pword'] = "Passwords do not match";
+    }
+
+    if (empty($errors)) {
+
+        $clean = array_map('trim', $_POST);
+
+        doUserRegister($conn, $clean);
+
+        $success = "Registration successful | Kindly login to continue";
+        header("location:login.php?success=$success");
+    }
+}
+
+?>
 
 
 
@@ -79,20 +76,23 @@ if(array_key_exists('submit', $_POST)){
     </head>
     <body>
 
-    <?php if(isset($success))  echo $success  ?>
+    <?php if (isset($success)) {
+    echo $success;
+}
+?>
         <div class="container-fluid">
-            
+
                 <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
 
                             <a class="navbar-brand" href="#"> <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png">
                               <b style="color: grey; margin-left: 20px;">Financial Tracker</b></a>
-                          
+
                           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle Navigation">
-                            
+
                             <span class="navbar-toggler-icon"></span>
-                          
+
                           </button>
-                          
+
                           <div class="collapse navbar-collapse" id="navbarcontent">
                             <ul class="navbar-nav ml-auto">
                               <li class="nav-item">
@@ -121,12 +121,12 @@ if(array_key_exists('submit', $_POST)){
                                   </div>
                               </li>
                             </ul>
-                          
+
                 </nav>
 
             <div class="row">
                     <div class="col-sm-5 mb-4">
-                        <form class="col text-center needs-validation" novalidate onsubmit="validate()" method="POST"> 
+                        <form class="col text-center needs-validation" novalidate onsubmit="validate()" method="POST">
                             <div class="container">
                                 <div class="row">
                                   <div class="col text-center">
@@ -143,10 +143,10 @@ if(array_key_exists('submit', $_POST)){
                                   <input type="text" name="name" class="form-control" id="validationCustom01" placeholder="Username" value="" title="Enter Your Username" required>
                                   <div class="invalid-feedback">Please enter a Username</div>
                               </div>
-                              <?php 
-                            $data = displayErrors($errors, 'email');
-                            echo $data;
-                              ?>
+                              <?php
+$data = displayErrors($errors, 'email');
+echo $data;
+?>
                               <div class="col-md-12 mb-3">
                                   <label for="validationCustom01"></label>
                                   <div class="input-group-prepend">
@@ -163,10 +163,10 @@ if(array_key_exists('submit', $_POST)){
                                   <div class="invalid-feedback">Please enter a password</div>
                               </div>
 
-                              <?php 
-                            $data = displayErrors($errors, 'pword');
-                            echo $data;
-                              ?>
+                              <?php
+$data = displayErrors($errors, 'pword');
+echo $data;
+?>
                               <div class="col-md-12 mb-3 input-group">
                                   <label for="validationCustom01"></label>
                                   <div class="input-group-prepend">
@@ -182,8 +182,8 @@ if(array_key_exists('submit', $_POST)){
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
-                        <img src="https://res.cloudinary.com/kuic/image/upload/v1569576950/Financial%20tracker/Group_3_mj9elh.png" alt="financial tracker image" class="img-fluid mt-3"> 
-                    </div>  
+                        <img src="https://res.cloudinary.com/kuic/image/upload/v1569576950/Financial%20tracker/Group_3_mj9elh.png" alt="financial tracker image" class="img-fluid mt-3">
+                    </div>
             </div>
         </div>
 
@@ -196,7 +196,7 @@ if(array_key_exists('submit', $_POST)){
           <li><a href = "#"><i class="fa fa-twitter-square" ></i> Follow Us on twitter</a></li>
           <li><a href = "#"> <i class="fa fa-facebook-official" ></i> Like us on facebook</a></li>
           <li><a href = "contact.html"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
-          
+
           </ul>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="js/signup.js"></script>

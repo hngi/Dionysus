@@ -16,6 +16,19 @@ function doUserRegister($dbconn, $input)
     $stmt->execute($data);
 }
 
+function doUserRegisterGoogle($dbconn, $email, $name)
+{
+
+    $stmt = $dbconn->prepare("INSERT INTO user(username, email) VALUES(:f, :e)");
+
+    $data = [
+        ":f" => $name,
+        ":e" => $email
+    ];
+
+    $stmt->execute($data);
+}
+
 function doesEmailExist($dbconn, $email)
 {
     $result = false;
@@ -243,6 +256,28 @@ function userLogin($dbconn, $input)
     $row = $stmt->fetch(PDO::FETCH_BOTH);
 
     if ($count != 1 || !password_verify($input['password'], $row['password'])) {
+        $result[] = false;
+    } else {
+        $result[] = true;
+        $result[] = $row;
+    }
+    return $result;
+}
+
+function userLoginGoogle($dbconn, $email)
+{
+
+    $result = [];
+
+    $stmt = $dbconn->prepare("SELECT * FROM user WHERE email=:e");
+
+    $stmt->bindParam(':e', $email);
+    $stmt->execute();
+
+    $count = $stmt->rowCount();
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+
+    if ($count != 1) {
         $result[] = false;
     } else {
         $result[] = true;
