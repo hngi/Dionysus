@@ -79,4 +79,4 @@ The template for your profile page can be found here
 Failure to do this will warant closing your pull request
  
 
- ## FRONT END SOMEONE SHOULD WORK ON THE FOOTER AS IT IS YET TO BE ASSAIGNED
+ 
