@@ -1,6 +1,113 @@
+
+@import "compass/css3";
+ @import url(https://fonts.googleapis.com/css?family=Raleway);
+/* Colors */
+ * {
+	 margin: 0;
+	 padding: 0;
+}
+ html, body {
+	 font-family: Raleway, sans-serif;
+     background-color: #fff;
+     text-decoration: none;
+}
+ footer {
+	 width: 100%;
+	 display: inline-block;
+	 margin: 2em 0;
+	 height: 70px;
+	 background-color: #999;
+}
+ footer .copyright {
+	 width: 20%;
+	 float: left;
+}
+ @media (max-width: 600px) {
+	 footer .copyright {
+		 width: 100%;
+	}
+}
+ footer .copyright p {
+	 padding-left: 10%;
+	 color: white;
+	 font-size: 0.7em;
+	 line-height: 70px;
+	 text-transform: capitalize;
+	 letter-spacing: 1px;
+}
+ @media (max-width: 600px) {
+	 footer .copyright p {
+		 text-align: center;
+		 padding: 0;
+	}
+}
+ footer .social {
+	 width: 70%;
+	 float: right;
+}
+ @media (max-width: 600px) {
+	 footer .social {
+		 width: 100%;
+	}
+}
+ footer .social a {
+	 float: left;
+	 line-height: 70px;
+	 text-decoration: none;
+	 color: white;
+	 text-align: center;
+	 font-weight: bold;
+}
+ footer .social a:hover {
+	 background-color: #222;
+}
+ .linked {
+	 background-color: #1e83ae;
+	 font-size: 1.2em;
+	 width: 15%;
+}
+ .face {
+	 background-color: #3d5b94;
+	 font-size: 1.2em;
+	 width: 15%;
+}
+ .tweet {
+	 background-color: #3dacdd;
+	 font-size: 1.2em;
+	 width: 15%;
+}
+ .FAQS {
+	 background-color: brown;
+	 font-size: 0.8em;
+	 width: 10%;
+}
+.home {
+	 background-color: black;
+	 font-size: 0.6em;
+	 width: 10%;
+}
+.about {
+	 background-color: brown;
+	 font-size: 0.6em;
+	 width: 15%;
+}
+.contact{
+	 background-color: black;
+	 font-size: 0.6em;
+	 width: 15%;
+}
+ .support {
+	 background: rgb(161, 205, 241;
+	 font-size: 100%;
+	 width: 10%;
+}
+ 
+footer .copyright span{
+font-size: 0.4em;
+}
 footer{
     background: rgb(161, 205, 241);
     text-align: center;
-    color: red;
-
+    color: black;
+font-size: 0.4em;
 }
