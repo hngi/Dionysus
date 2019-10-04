@@ -66,6 +66,7 @@ if(array_key_exists('submit', $_POST)){
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-signin-client_id" content="228167943910-5opt0jd4snh5kf4otob28dc0qoebrsgk.apps.googleusercontent.com">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -103,7 +104,7 @@ if(array_key_exists('submit', $_POST)){
                               </li>
 
                               <li class="nav-item">
-                                <a class="nav-link" href="#"><b>Pricing</b></a>
+                                <a class="nav-link" href="pricing.html"><b>Pricing</b></a>
                               </li>
 
                               <li class="nav-item">
@@ -177,10 +178,7 @@ if(array_key_exists('submit', $_POST)){
                               <div class="col-md-12 mb-2">
                                 <button class="btn btn-primary col-md-12 mb-4 text-center" name="submit" type="submit" >Sign up</button>
                               </div>
-                              <p class="text-center mb-4">OR</p>
-                              <div class="col-md-12 mb-2">
-                                <button class="btn btn-primary col-md-12 mb-4 text-center btn-danger" name="submit" type="submit"><span class="btn-label p-2"><i class="fab fa-google-plus-g"></i></span>SignUp with Google</button>
-                              </div>
+                              
                         </form>
                     </div>
                     <div class="col-sm-7 mb-4">
@@ -200,6 +198,7 @@ if(array_key_exists('submit', $_POST)){
           <li><a href = "contact.html"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
           
           </ul>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="js/signup.js"></script>
         <script src="https://kit.fontawesome.com/85682eb992.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
