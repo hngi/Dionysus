@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>User Profile Page</title>
+    <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+    <meta name="description" content="Financial Tracker Web App">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="styles/dash.css">-->
+    <link rel="stylesheet" href="styles/style2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+background-color: white;/*url("download.png");*/
+}
+/*form {border: 3px solid #f1f1f1;}*/
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 900px;
+  height: auto;
+  padding: 20px 30px;
+  background-color: lightgray;
+  padding-top: 10vh;
+  box-shadow: 0 0 10px 0 #000;
+  margin: auto;
+}
+
+input[type=text], input[type=email], input[type=password] {
+  width: 100%;
+  padding: 8px 14px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 2px solid gray;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: white;
+}
+
+        .imgcontainer {
+  text-align: center;
+  margin: 20px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 30%;
+  border-radius: 40%;
+}
+
+.nav li{
+    list-style: none;
+    padding-left: auto;;
+}
+.nav ul{
+    margin-left: auto;
+}
+
+/*body.login {
+  background-color: white;
+  max-width: 500px;
+  margin: 10vh auto;
+  padding: 1em;
+  height: auto;
+}*/
+
+nav[role=navigation] {
+    background: #7D7D7D;
+    color: #ddd;
+    margin-top: -28px;
+    /* icons */
+}
+
+nav[role=navigation] li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+nav[role=navigation] li a {
+    color: #ddd;
+    text-decoration: none;
+    display: block;
+    padding: .7em;
+}
+
+nav[role=navigation] li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+nav[role=navigation] li a:before {
+    content: "\f248";
+    font-family: FontAwesome;
+    padding-right: .6em;
+}
+
+nav[role=navigation] .dashboard a:before {
+    content: "";
+}
+
+nav[role=navigation] .write a:before {
+    content: "";
+}
+
+nav[role=navigation] .edit a:before {
+    content: "";
+}
+
+nav[role=navigation] .comments a:before {
+    content: "";
+}
+
+nav[role=navigation] .users a:before {
+    content: "";
+}
+ nav[role=navigation] {
+        position: fixed;
+        width: 200px;
+        top: 75px;
+        bottom: 0px;
+    }
+
+@media screen and (min-width: 600px) {
+    header[role=banner] {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        height: 75px;
+    }
+    header[role=banner] .utilities {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+        color: darkslategray;
+        width: auto;
+    }
+    header[role=banner] .utilities li {
+        display: inline-block;
+    }
+    header[role=banner] .utilities li a {
+        padding: .5em 1em;
+    }
+}
+
+    button {
+      border-radius: 5px;
+        background-color: royalblue;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <a class="navbar-brand" href="#">
+            <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="logo"> Financial Tracker
+        </a>
+
+        <ul class="nav justify-content-center mt-3">
+            <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Why Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            
+            <li class="nav-item dropdown visible">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      John Doe
+                    </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="login.html">Sign Out</a>
+                    <a class="dropdown-item" href="userProfile.html">update profile</a>
+                </div>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div class="body">
+    <nav role="navigation" style="margin-top: 120px; height: 250px;">
+            <ul class="main">
+                <li class="dashboard"><a href="dashboard.php">Dashboard</a></li>
+                <li class="write"><a href="expense.php">Add Expense</a></li>
+                <li class="edit"><a href="view_expense.php">Manage Expenses</a></li>
+                <li class="book"><a href="expense_report.php">Expense Reports</a></li>
+                <li class="profile"><a href="userProfile.html">Profile</a></li>
+            </ul>
+        </nav>
+        
+</div>
+        
+<form action="/action_page.php">
+  <div class="container">
+  <h4>EDIT INFORMATION</h4>
+  <div class="imgcontainer">
+    <img src="avatar.png" alt="Avatar" class="avatar">
+    <button type="submit">Choose a File</button>
+  </div>
+
+<h4>ACCOUNT INFORMATION</h4>
+<div>
+    <ul>
+
+    <label for="uname">First Name</label><input type="text" placeholder="First Name" name="uname" required>
+
+    <label for="uname">Last Name</label>
+    <input type="text" placeholder="Last Name" name="uname" required>
+
+    <label for="email">E-mail</label>
+    <input type="email" placeholder="E-mail" name="E-mail Address" required>
+</ul>
+</div>
+
+<h4>CHANGE PASSWORD</h4>
+<div>
+    <ul>
+<label for="psw">Current Password</label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+ <label for="psw">New Password</label>
+    <input type="password" placeholder="New Password" name="psw" required>
+    
+<label for="psw">Confirm Password</label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    </ul>
+</div>
+<div style="text-align: center;">
+    <button type="submit">Update Profile</button>
+  </div>
+
+    <!--<button type="button" class="cancelbtn">Cancel</button>-->
+</form>
+
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+
+</body>
+</html>
