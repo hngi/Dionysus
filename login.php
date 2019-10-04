@@ -63,7 +63,7 @@ if (array_key_exists('login', $_POST)) {
 // init configuration
 $clientID = '75666969686-cec0d3js2jgqm8sf2i61t84uosgoob3d.apps.googleusercontent.com';
 $clientSecret = 'Qzgz-Jl7sOe3fHd9ZtHDaxwc';
-$redirectUri = 'http://localhost/Dionysus/login.php';
+$redirectUri = 'https://boiling-chamber-53204.herokuapp.com/login.php';
 
 // create Client Request to access Google API
 $client = new Google_Client();
