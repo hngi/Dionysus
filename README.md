@@ -70,10 +70,13 @@ The template for your profile page can be found here
 - Create a new file with your slack username, e.g `mark.php`
 - Paste the contents there
 - Now your page should be assesible via `localhost:8000/interns/mark`
-  ![hng profile](https://res.cloudinary.com/iambeejayayo/image/upload/v1554302765/download.png)
+  ![hng profile]
 - Edit the contents of the file to your profile details
 - Push to `staging` branch and open a pull request
 - Wait for review
 
 **Ensure you read this doc [here](https://docs.google.com/document/d/1TxZqGLsut4ZVJEP6xF-DZGq3goaHfQ2phF-1I3YbrNc/edit?usp=sharing) for complete instructions** <br>
 Failure to do this will warant closing your pull request
+ 
+
+ 

@@ -5,7 +5,8 @@
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<head>
+  <link rel="stylesheet" type="text/css" href="assets/css/faqq.css">
+  <head>
 	<title>Financial Tracker</title>
 </head>
 <body>
@@ -13,19 +14,19 @@
             
 		<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
 
-		<a class="navbar-brand" href="index.php"> <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png">
+		<a class="navbar-brand" href="index.php"><img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png">
 			<b style="color: grey; margin-left: 20px;">Financial Tracker</b></a>
 	
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle Navigation">
-		
-		<span class="navbar-toggler-icon"></span>
-	
-	</button>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle Navigation">
+
+				<span class="navbar-toggler-icon"></span>
+
+			</button>
 	
 	<div class="collapse navbar-collapse" id="navbarcontent">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="#"><b>Home</b></a>
+				<a class="nav-link" href="index.php"><b>Home</b></a>
 			</li>
 
 			<li class="nav-item">
@@ -33,11 +34,11 @@
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="#"><b>Pricing</b></a>
+				<a class="nav-link" href="pricing.html"><b>Pricing</b></a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="#"><b>Contact Us</b></a>
+				<a class="nav-link" href="contact.html"><b>Contact Us</b></a>
 			</li>
 
 			 
@@ -50,13 +51,11 @@
                                       </a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                       <a class="dropdown-item" href="login.html">Sign Out</a>
-                                      <a class="dropdown-item" href="#">Another action</a>
-                                      <div class="dropdown-divider"></div>
-                                      <a class="dropdown-item" href="#">Something else here</a>
+                                      <a class="dropdown-item" href="#">Update Profile</a>
                                   </div>
                               </li>
 					</ul>
-				  
+				</div>
 		</nav>
 
 	<div class="row">
@@ -74,6 +73,19 @@
             </div>  
 	</div>
 </div>
+
+<footer class="cd-header flex flex-row flex-center" >
+	<ul>
+	<li><a href = "FAQ.html"><i class="fa fa-question" ></i> FAQs</a></li>
+	<li><a href = "https://boiling-chamber-53204.herokuapp.com/index.php#"> <i class="fa fa-home" ></i>Home</a></li>
+	<li><a href = "#"> <i class="fa fa-book" aria-hidden="true"></i>About 	Us</a></li>
+	<li><a href = "https://boiling-chamber-53204.herokuapp.com/signup.php"><i class="fa fa-user" aria-hidden="true"></i>Sign Up</a></li>
+	<li><a href = "#"><i class="fa fa-twitter-square" ></i> Follow Us on twitter</a></li>
+	<li><a href = "#"> <i class="fa fa-facebook-official" ></i> Like us on facebook</a></li>
+	<li><a href = "contact.html"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
+	
+	</ul>
+  </footer>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

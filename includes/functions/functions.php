@@ -16,6 +16,50 @@ function doUserRegister($dbconn, $input)
     $stmt->execute($data);
 }
 
+
+function getUserByID($dbconn, $id)
+{
+    $stmt = $dbconn->prepare("SELECT * FROM user WHERE user_ID=:i");
+
+    $stmt->bindParam(':i', $id['user_id']);
+
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+
+    return $row;
+
+}
+
+
+function getPricingPlan($dbconn, $input)
+{
+    $stmt = $dbconn->prepare("SELECT * FROM pricing_plans WHERE pricing_id=:pi");
+
+    $stmt->bindParam(':pi', $input['id']);
+
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+
+    return $row;
+
+}
+
+
+function doUserRegisterGoogle($dbconn, $email, $name)
+{
+
+    $stmt = $dbconn->prepare("INSERT INTO user(username, email) VALUES(:f, :e)");
+
+    $data = [
+        ":f" => $name,
+        ":e" => $email
+    ];
+
+    $stmt->execute($data);
+}
+
 function doesEmailExist($dbconn, $email)
 {
     $result = false;
@@ -100,6 +144,29 @@ function yearlyExpenses($dbconn, $userid)
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_BOTH);
     return $row['yearlyexpenses'];
+}
+
+function expenseReports($dbconn, $userid, $fdate, $tdate)
+{
+    $arr = [];
+    $dateformat = '"%Y-%m-%d"';
+    $stmt = $dbconn->prepare("SELECT * FROM userexpense WHERE user_ID = $userid and date_format(expense_Date, $dateformat) >= '$fdate' and date_format(expense_Date, $dateformat) <= '$tdate'");
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $arr[] = $row;
+    }
+    return $arr;
+}
+
+function expenseReportsPdf($dbconn)
+{
+    $arr = [];
+    $stmt = $dbconn->prepare("SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE  `TABLE_SCHEMA`='financialtracker' AND `TABLE_NAME`='userexpense'");
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $arr[] = $row;
+    }
+    return $arr;
 }
 
 function graphExpenses($dbconn, $userid)
@@ -220,6 +287,28 @@ function userLogin($dbconn, $input)
     $row = $stmt->fetch(PDO::FETCH_BOTH);
 
     if ($count != 1 || !password_verify($input['password'], $row['password'])) {
+        $result[] = false;
+    } else {
+        $result[] = true;
+        $result[] = $row;
+    }
+    return $result;
+}
+
+function userLoginGoogle($dbconn, $email)
+{
+
+    $result = [];
+
+    $stmt = $dbconn->prepare("SELECT * FROM user WHERE email=:e");
+
+    $stmt->bindParam(':e', $email);
+    $stmt->execute();
+
+    $count = $stmt->rowCount();
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+
+    if ($count != 1) {
         $result[] = false;
     } else {
         $result[] = true;

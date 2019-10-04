@@ -1,0 +1,30 @@
+*{
+    scroll-behavior: smooth;
+}
+html{
+    background-color: #D7D7D7;
+}
+body{
+    background-color: #D7D7D7;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+/*body					{
+							background-image: url();
+							background-color: ;
+							background-size: cover;
+							background-repeat: no-repeat;
+}*/
+
+
+.basic :hover			{
+							width: 20%;
+							cursor: pointer;
+}
+
+h2					{
+							margin-bottom: -19px;
+}
+
