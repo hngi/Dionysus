@@ -27,15 +27,20 @@ if(empty($_POST['agree'])) {
 		$show =  getUserByID($conn, $_POST);
    		$row = getPricingPlan($conn, $_POST);
       	$plan_id = $row[0];
-      	$email = $show['email'];
+      	 $email = $show['email'];
+
+    	$username = $show['username'];
       	$amount = $row[2];
       	$vtoken = mt_rand();	                 
 							
 $curl = curl_init();
 
 $customer_email = $email;
+$custom_title = "Dionysus Basic Plan";
 $amount = $amount;  
 $currency = "NGN";
+$custom_logo = "<img src='dion.png'>";
+$customer_firstname = "Subscription for Dionysus Basic";
 $txref = 'dionysus-'.$vtoken; // ensure you generate unique references per transaction.
 $PBFPubKey = "FLWPUBK-344967f4470b9315b0b5964c2417dfc0-X"; // get your public key from the dashboard.
 $redirect_url = "https://boiling-chamber-53204.herokuapp.com/dashboard.php";
@@ -53,6 +58,7 @@ curl_setopt_array($curl, array(
     'txref'=>$txref,
     'PBFPubKey'=>$PBFPubKey,
     'redirect_url'=>$redirect_url,
+     'custom_title'=>$custom_title,
     'payment_plan'=>$payment_plan
   ]),
   CURLOPT_HTTPHEADER => [
@@ -116,6 +122,8 @@ header('Location: ' . $transaction->data->link);
 $curl = curl_init();
 
 $customer_email = $email;
+$customer_firstname = $username;
+$custom_title = "Dionysus Thrift Plan";
 $amount = $amount;  
 $currency = "NGN";
 $txref = 'dionysus-'.$vtoken; 
@@ -135,6 +143,7 @@ curl_setopt_array($curl, array(
     'txref'=>$txref,
     'PBFPubKey'=>$PBFPubKey,
     'redirect_url'=>$redirect_url,
+    'custom_title'=>$custom_title,
     'payment_plan'=>$payment_plan
   ]),
   CURLOPT_HTTPHEADER => [
@@ -192,6 +201,7 @@ header('Location: ' . $transaction->data->link);
 $curl = curl_init();
 
 $customer_email = $email;
+$custom_title = "Dionysus Pro Plan";
 $amount = $amount;  
 $currency = "NGN";
 $txref = 'dionysus-'.$vtoken; // ensure you generate unique references per transaction.
@@ -211,6 +221,7 @@ curl_setopt_array($curl, array(
     'txref'=>$txref,
     'PBFPubKey'=>$PBFPubKey,
     'redirect_url'=>$redirect_url,
+    'custom_title'=>$custom_title,
     'payment_plan'=>$payment_plan
   ]),
   CURLOPT_HTTPHEADER => [
@@ -252,20 +263,20 @@ header('Location: ' . $transaction->data->link);
 
     ?>
 
-
+    <?php 
+                            $data = displayErrors($errors, 'agree');
+                            echo $data;
+                              ?>
 		<table class="table-striped" style="width: 85%;">
 			<tr style="border: 1px solid #ddd; margin-bottom: 24px;">
-				<td></td>
+				<td> </td>
 				<td class="basic" style="background-color: grey; text-align: center; padding-right: 9px; padding-left: 9px;"><h1>Basic</h1></td>
 				<td class="basic" style="background-color: gold; text-align: center; padding-right: 9px; padding-left: 9px;"><h1>Thrift</h1></td>
 				<td class="basic" style="background-color: silver; text-align: center; padding-right: 9px; padding-left: 9px;"><h1>Pro</h1></td>
 			</tr>
 
 			<tr>
-				<td><!-- <?php if(isset($invalid))  echo $invalid ?> --> <?php 
-                            $data = displayErrors($errors, 'agree');
-                            echo $data;
-                              ?></td>
+				<td><!-- <?php if(isset($invalid))  echo $invalid ?> --> </td>
 				<td style="text-align: center;"><h2>NGN 500</h2> <br><small>/month</small></td>
 				<td style="text-align: center;"><h2>NGN 750</h2> <br><small>/month</small></td>
 				<td style="text-align: center;"><h2>NGN 1000</h2> <br><small>/month</small></td>
