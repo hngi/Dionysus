@@ -8,7 +8,9 @@
  html, body {
 	 font-family: Raleway, sans-serif;
      background-color: #999;
-     text-decoration: none;
+	 text-decoration: none;
+	 font-size: 0.7em;
+	 text-decoration-style: none;
 }
  footer {
 	 width: 100%;
@@ -44,11 +46,62 @@
  footer .social {
 	 width: 70%;
 	 float: right;
+	 font-size: 0.8em;
 }
  @media (max-width: 600px) {
 	 footer .social {
 		 width: 100%;
 	}
+	footer{
+		background: rgb(161, 205, 241);
+		
+	font-size: 0.4em;
+	}
+	footer .social {
+		width: 80%;
+		float: right;
+		font-size: 0.4em;
+   }
+
+   .linked {
+	
+	width: 10%;
+}
+.face {
+	
+	width: 10%;
+}
+.tweet {
+	
+	width: 10%;
+}
+.FAQS {
+	
+	width: 8%;
+}
+.home {
+	
+	width: 8%;
+}
+.about {
+	
+	
+	width: 20%;
+}
+.contact{
+	
+	width: 20%;
+}
+.support {
+	
+	width: 10%;
+}
+
+
+
+
+
+
 }
  footer .social a {
 	 float: left;
@@ -77,23 +130,23 @@
 	 width: 15%;
 }
  .FAQS {
-	 background-color: brown;
+	 background-color: #1e83ae;
 	 font-size: 0.8em;
 	 width: 10%;
 }
 .home {
-	 background-color: black;
-	 font-size: 0.6em;
+	 background-color:#3dacdd;
+	 font-size: 0.7em;
 	 width: 10%;
 }
 .about {
-	 background-color: brown;
-	 font-size: 0.6em;
+	 background-color: #3d5b94;
+	 font-size: 0.7em;
 	 width: 15%;
 }
 .contact{
 	 background-color: black;
-	 font-size: 0.6em;
+	 font-size: 0.7em;
 	 width: 15%;
 }
  .support {
@@ -109,5 +162,5 @@ footer{
     background: rgb(161, 205, 241);
     text-align: center;
     color: black;
-font-size: 0.6em;
+font-size: 1.6em;
 }
