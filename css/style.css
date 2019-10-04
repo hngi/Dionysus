@@ -1,4 +1,4 @@
-/*body				{
+body				{
 							background-color: #D7D7D7;
 							background-image: url('https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269287/Background_imgbackground_vdl0h6.png');
 							background-position: center center;
@@ -12,7 +12,7 @@ a 					{
 }
 a:hover				{
 						text-decoration: none;
-}*/
+}
 h1						{
 							position: absolute;
 							width: 250px;
