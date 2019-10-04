@@ -1,6 +1,7 @@
 {
     "require": {
       "ext-mysqli": "*",
-      "sendgrid/sendgrid": "*"
+      "sendgrid/sendgrid": "*",
+        "google/apiclient": "^2.4.0"
     }
   }

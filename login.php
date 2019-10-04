@@ -1,7 +1,6 @@
 <?php
-
 session_start();
-
+require_once 'vendor/autoload.php';
 include './includes/db/db_config.php';
 include './includes/functions/functions.php';
 
@@ -61,6 +60,51 @@ if (array_key_exists('login', $_POST)) {
        
         
       }
+// init configuration
+$clientID = '75666969686-cec0d3js2jgqm8sf2i61t84uosgoob3d.apps.googleusercontent.com';
+$clientSecret = 'Qzgz-Jl7sOe3fHd9ZtHDaxwc';
+$redirectUri = 'https://boiling-chamber-53204.herokuapp.com/login.php';
+
+// create Client Request to access Google API
+$client = new Google_Client();
+$client->setClientId($clientID);
+$client->setClientSecret($clientSecret);
+$client->setRedirectUri($redirectUri);
+$client->addScope("email");
+$client->addScope("profile");
+
+// authenticate code from Google OAuth Flow
+if (isset($_GET['code'])) {
+    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+    $client->setAccessToken($token['access_token']);
+
+    // get profile info
+    $google_oauth = new Google_Service_Oauth2($client);
+    $google_account_info = $google_oauth->userinfo->get();
+    $email = $google_account_info->email;
+    $name = $google_account_info->name;
+    if(doesEmailExist($conn, $email)){
+      $data = userLoginGoogle($conn, $email);
+      if ($data[0]) {
+        $details = $data[1];
+        $_SESSION['userid'] = $details['user_ID'];
+        $_SESSION['username'] = $details['username'];
+        header("location:dashboard.php");
+    } 
+  } else {
+    doUserRegisterGoogle($conn, $email, $name);
+    $data = userLoginGoogle($conn, $email);
+    if ($data[0]) {
+      $details = $data[1];
+      $_SESSION['userid'] = $details['user_ID'];
+      $_SESSION['username'] = $details['username'];
+      header("location:dashboard.php");
+  }
+}
+    // now you can use this profile info to create account in your website and make user logged in.
+} else {
+    $googleLogin = "<a href='" . $client->createAuthUrl() . "'>Google Login</a>";
+}
 
 ?>
 
@@ -113,7 +157,7 @@ if (array_key_exists('login', $_POST)) {
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#"><b>Pricing</b></a>
+        <a class="nav-link" href="pricing.html"><b>Pricing</b></a>
       </li>
 
       <li class="nav-item">
@@ -187,7 +231,7 @@ if (array_key_exists('login', $_POST)) {
                               </div>
                               <p class="text-center mb-4">OR</p>
                               <div class="col-md-12 mb-2">
-                                <button class="btn btn-primary col-md-12 mb-4 text-center btn-danger" name="submit" type="submit"><span class="btn-label p-2"><i class="fab fa-google-plus-g"></i></span>Login with Google</button>
+                                <button class="btn btn-primary col-md-12 mb-4 text-center btn-danger" name="submit" type="submit"><span class="btn-label p-2"><i class="fab fa-google-plus-g"></i></span><?php echo $googleLogin ?></button>
                               </div>
                         </form>
                     </div>

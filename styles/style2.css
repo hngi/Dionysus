@@ -354,6 +354,10 @@ nav[role=navigation] .comments a:before {
 nav[role=navigation] .users a:before {
     content: "";
 }
+nav[role=navigation] .profile a:before {
+    content: "";
+}
+
 
 
 /* current nav item */
@@ -363,7 +367,8 @@ nav[role=navigation] .users a:before {
 .write .write a,
 .edit .edit a,
 .comments .comments a,
-.users .users a {
+.users .users a,
+.profile .profile a {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
