@@ -16,6 +16,37 @@ function doUserRegister($dbconn, $input)
     $stmt->execute($data);
 }
 
+
+function getUserByID($dbconn, $id)
+{
+    $stmt = $dbconn->prepare("SELECT * FROM user WHERE user_ID=:i");
+
+    $stmt->bindParam(':i', $id['user_id']);
+
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+
+    return $row;
+
+}
+
+
+function getPricingPlan($dbconn, $input)
+{
+    $stmt = $dbconn->prepare("SELECT * FROM pricing_plans WHERE pricing_id=:pi");
+
+    $stmt->bindParam(':pi', $input['id']);
+
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_BOTH);
+
+    return $row;
+
+}
+
+
 function doUserRegisterGoogle($dbconn, $email, $name)
 {
 
