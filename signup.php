@@ -113,7 +113,7 @@ if (array_key_exists('submit', $_POST)) {
                                 
 
                               <li class="nav-item">
-                                <a class="nav-link" href="contact.html"><b>Contact Us</b></a>
+                                <a class="nav-link" href="contact.php"><b>Contact Us</b></a>
                               </li>
 
                               <li class="nav-item dropdown invisible">
@@ -200,7 +200,7 @@ echo $data;
           <li><a href = "https://boiling-chamber-53204.herokuapp.com/signup.php"><i class="fa fa-user" aria-hidden="true"></i>Sign Up</a></li>
           <li><a href = "#"><i class="fa fa-twitter-square" ></i> Follow Us on twitter</a></li>
           <li><a href = "#"> <i class="fa fa-facebook-official" ></i> Like us on facebook</a></li>
-          <li><a href = "contact.html"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
+          <li><a href = "contact.php"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
 
           </ul>
         <script src="https://apis.google.com/js/platform.js" async defer></script>

@@ -1,3 +1,81 @@
+<?php
+namespace SendGrid;
+
+require 'vendor/autoload.php';
+include './includes/db/db_config.php';
+include './includes/functions/functions.php';
+require "./includes/sendgrid-php/sendgrid-php.php";
+use SendGrid\Mail\Content;
+use SendGrid\Mail\From;
+use SendGrid\Mail\Mail;
+use SendGrid\Mail\Personalization;
+use SendGrid\Mail\To;
+
+$errors = array();
+
+//Validates email and checks to see if email exists upon submit
+if (array_key_exists('submit', $_POST)) {
+
+    if (empty($_POST['fullname'])) {
+        $errors['fullname'] = "Please enter your Full Name";
+    }
+
+    if (empty($_POST['email'])) {
+        $errors['email'] = "Email does not exist";
+    }
+    if (empty($_POST['subject'])) {
+        $errors['subject'] = "Please enter a subject";
+    }
+
+    if (empty($_POST['messagebox'])) {
+        $errors['messagebox'] = "Please enter a message";
+    }
+    if (empty($errors)) {
+        function resetPasswordEmail()
+        {
+            try {
+                $subject1 = $_POST['subject'];
+                $email = $_POST['email'];
+                $messagebox = $_POST['messagebox'];
+                $fullname = $_POST['fullname'];
+                $message = "We have received your message from our contact page we will get back to you within 24hr <br> Full Name: $fullname <br> Email: $email <br> Message: $messagebox <br> ";
+                $from = new From("contact@dionysus-team.com", "contact@dionysus-team.com");
+                $subject = $subject1;
+                $to = new To($email, $email);
+                $content = new Content("text/html", $message);
+                $mail = new Mail($from, $to, $subject, $content);
+                $personalization = new Personalization();
+                $personalization->addTo(new To("dionysus123@gmail.com", "dionysus123@gmail.com"));
+                $mail->addPersonalization($personalization);
+                return $mail;
+            } catch (\Exception $e) {
+                echo $e->getMessage();
+            }
+            return null;
+        }
+
+        $sent = "";
+        function sendResetPasswordEmail()
+        {
+            $apiKey = getenv('SENDGRID_API_KEY');
+            $sg = new \SendGrid($apiKey);
+            $request_body = resetPasswordEmail();
+
+            try {
+                global $sent;
+                $response = $sg->client->mail()->send()->post($request_body);
+                header("location:ThankYou.html");
+            } catch (Exception $e) {
+                echo 'Caught exception: ', $e->getMessage(), "\n";
+            }
+        }
+        sendResetPasswordEmail();
+    }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -71,7 +149,7 @@
 
             <div class="row">
                     <div class="col-sm-5 mb-4">
-                        <form class="col text-center needs-validation" novalidate onsubmit="validate()" method="POST" action="ThankYou.html"> 
+                        <form class="col text-center needs-validation" action="" novalidate onsubmit="validate()" method="POST"> 
                           <div class="row d-flex justify-content-center">
                             <h3 class="white-text mb-3  font-weight-bold">Contact Us</h3>
                            </div>
@@ -82,7 +160,7 @@
                                       <span class="input-group-text" id="basic-addon1" style="background-color: none !important;"><i class="fas fa-user"></i></span>
                                   </div>
                                   <label for="validationCustom01"></label>
-                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Name" value="" title="Enter Your Name" minlength="3" maxlength="20" required>
+                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Name" value="" title="Enter Your Name" minlength="3" maxlength="20" name="fullname" required>
                                   <div class="invalid-feedback">Please enter your Name</div>
                               </div>
 
@@ -91,7 +169,7 @@
                                       <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
                                   </div>
                                   <label for="validationCustom01"></label>
-                                  <input type="email" class="form-control" id="validationCustom02" placeholder="Email" value="" title="Enter Your Email" required>
+                                  <input type="email" class="form-control" id="validationCustom02" placeholder="Email" value="" title="Enter Your Email" name="email" required>
                                   <div class="invalid-feedback">Please enter your Email</div>
                               </div>
 
@@ -100,20 +178,20 @@
                                       <span class="input-group-text" id="basic-addon1"><i class="fas fa-tag"></i></span>
                                   </div>
                                   <label for="validationCustom01"></label>
-                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Subject" value="" title="Message Subject"m minlength="2" maxlength="20" required>
+                                  <input type="text" class="form-control" id="validationCustom01" placeholder="Subject" value="" title="Message Subject"m minlength="2" maxlength="20" name="subject" required>
                                   <div class="invalid-feedback">Please enter Subject of Message</div>
                               </div>
 
                               <div class="form-group required-field-block">       
                                   <div class="col-md-12 input-group">
                                       <span class="input-group-text" id="basic-addon1"><i class="fas fa-pencil-alt"></i></span>
-                                      <textarea rows="7" size="30" value="" class="form-control" placeholder="Message" title="Message"  minlength="30" required></textarea>
+                                      <textarea rows="7" size="30" value="" class="form-control" placeholder="Message" title="Message"  minlength="30" name="messagebox" required></textarea>
                                       <div class="invalid-feedback">Message should be 30 Chracters or more</div>       
                                   </div>
                               </div>
 
                               <div class="col-md-12">
-                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" id="submit">Send</button>
+                              <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="submit" id="submit" data-toggle="modal" data-target="#exampleModal" onclick="return sendHelloEmail();">Send</button>
                               </div>
                         </form>
                     </div>
@@ -132,7 +210,7 @@
           <li><a href = "https://boiling-chamber-53204.herokuapp.com/signup.php"><i class="fa fa-user" aria-hidden="true"></i>Sign Up</a></li>
           <li><a href = "#"><i class="fa fa-twitter-square" ></i> Follow Us on twitter</a></li>
           <li><a href = "#"> <i class="fa fa-facebook-official" ></i> Like us on facebook</a></li>
-          <li><a href = "contact.html"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
+          <li><a href = "contact.php"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
           
           </ul>
           </footer>-->
