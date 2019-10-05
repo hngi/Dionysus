@@ -219,3 +219,7 @@ span #basic-addon1{
     text-decoration: none;
     color: #FFFFFF;
 }
+.btn a:hover{
+    text-decoration: none;
+    color: #D7D7D7;
+}

@@ -65,13 +65,7 @@ if (array_key_exists('submit', $_POST)) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-signin-client_id" content="228167943910-5opt0jd4snh5kf4otob28dc0qoebrsgk.apps.googleusercontent.com">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
         <link rel="stylesheet" type="text/css" href="styles/style.css">
-        <link rel="stylesheet" href="assets/css/faqq.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
@@ -108,7 +102,7 @@ if (array_key_exists('submit', $_POST)) {
                               </li>
                                 
                                 <li class="nav-item">
-                                <a class="nav-link" href="FAQ.html"><b>FAQ</b></a>
+                                <a class="nav-link" href="FAQ.html"><b>FAQs</b></a>
                               </li>
                                 
 
@@ -192,17 +186,7 @@ echo $data;
             </div>
         </div>
 
-        <footer class="cd-header flex flex-row flex-center" >
-          <ul>
-          <li><a href = "FAQ.html"><i class="fa fa-question" ></i> FAQs</a></li>
-          <li><a href = "https://boiling-chamber-53204.herokuapp.com/index.php#"> <i class="fa fa-home" ></i>Home</a></li>
-          <li><a href = "#"> <i class="fa fa-book" aria-hidden="true"></i>About 	Us</a></li>
-          <li><a href = "https://boiling-chamber-53204.herokuapp.com/signup.php"><i class="fa fa-user" aria-hidden="true"></i>Sign Up</a></li>
-          <li><a href = "#"><i class="fa fa-twitter-square" ></i> Follow Us on twitter</a></li>
-          <li><a href = "#"> <i class="fa fa-facebook-official" ></i> Like us on facebook</a></li>
-          <li><a href = "contact.php"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
-
-          </ul>
+        
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="js/signup.js"></script>
         <script src="https://kit.fontawesome.com/85682eb992.js" crossorigin="anonymous"></script>
