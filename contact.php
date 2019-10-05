@@ -45,7 +45,7 @@ if (array_key_exists('submit', $_POST)) {
                 $content = new Content("text/html", $message);
                 $mail = new Mail($from, $to, $subject, $content);
                 $personalization = new Personalization();
-                $personalization->addTo(new To("dionysus123@gmail.com", "dionysus123@gmail.com"));
+                $personalization->addTo(new To("dionysusteam2019@gmail.com", "dionysusteam2019@gmail.com"));
                 $mail->addPersonalization($personalization);
                 return $mail;
             } catch (\Exception $e) {
