@@ -104,7 +104,7 @@ if (array_key_exists('submit', $_POST)) {
                               </li>
 
                               <li class="nav-item">
-                                <a class="nav-link" href="pricing.html"><b>Pricing</b></a>
+                                <a class="nav-link" href="pricing.php"><b>Pricing</b></a>
                               </li>
 
                               <li class="nav-item">
