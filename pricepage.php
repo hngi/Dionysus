@@ -83,7 +83,7 @@ if(array_key_exists('basic', $_POST)) {
 				<a class="nav-link" href="#"><b>Why Us</b></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="pricing.html"><b>Pricing</b></a>
+				<a class="nav-link" href="#"><b>Pricing</b></a>
 			</li>
 			
 			<li class="nav-item">
@@ -91,7 +91,7 @@ if(array_key_exists('basic', $_POST)) {
 			</li>
 			
 			<li class="nav-item">
-				<a class="nav-link" href="contact.html"><b>Contact Us</b></a>
+				<a class="nav-link" href="contact.php"><b>Contact Us</b></a>
 			</li>
 			 
 					  <li class="invisible">

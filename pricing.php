@@ -268,7 +268,8 @@ header('Location: ' . $transaction->data->link);
     <?php 
                             $data = displayErrors($errors, 'agree');
                             echo $data;
-                              ?>
+							  ?>
+							  <div class="table-responsive-sm">
 		<table class="table-striped" style="width: 85%;">
 			<tr style="border: 1px solid #ddd; margin-bottom: 24px;">
 				<td> </td>
@@ -381,7 +382,7 @@ header('Location: ' . $transaction->data->link);
 				<td> <input type="submit"  value="Choose Thrift" target="_blank" class="button btn-success" name="thrift" style="height: 59px; border-radius: 3px; width: 100%;"></td>
 				<td> <input type="submit"  value="Choose Pro" target="_blank" class="button btn-success" name="pro" style="height: 59px; border-radius: 3px; width: 100%; background-color: purple;"></td>
 		</table>
-		
+</div>
 	</center>
 	
 	<label>By checking the box below, you have agreed to our <a href="#">terms and conditions</a></label>
