@@ -3,27 +3,25 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html>
+<html class="no-js">
 <!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>User Profile Page</title>
-    <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="description" content="Financial Tracker Web App">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="styles/dash.css">-->
-    <link rel="stylesheet" href="styles/style2.css">
+    <link rel="stylesheet" href="styles/dash.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
     
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
 <style>
 body {font-family: Arial, Helvetica, sans-serif;
-background-color: white;/*url("download.png");*/
+background-color: white;
 }
 /*form {border: 3px solid #f1f1f1;}*/
 * {
@@ -33,11 +31,12 @@ background-color: white;/*url("download.png");*/
 .container {
   width: 900px;
   height: auto;
-  padding: 20px 30px;
+  padding: 30px 50px;
   background-color: lightgray;
-  padding-top: 10vh;
   box-shadow: 0 0 10px 0 #000;
   margin: auto;
+  margin-top: 2%;
+  margin-left: 20%;
 }
 
 input[type=text], input[type=email], input[type=password] {
@@ -59,149 +58,65 @@ input[type=text], input[type=email], input[type=password] {
 /* Avatar image */
 img.avatar {
   width: 30%;
-  border-radius: 40%;
+  border-radius: 50%;
 }
-
-.nav li{
-    list-style: none;
-    padding-left: auto;;
-}
-.nav ul{
-    margin-left: auto;
-}
-
-/*body.login {
-  background-color: white;
-  max-width: 500px;
-  margin: 10vh auto;
-  padding: 1em;
-  height: auto;
-}*/
-
-nav[role=navigation] {
-    background: #7D7D7D;
-    color: #ddd;
-    margin-top: -28px;
-    /* icons */
-}
-
-nav[role=navigation] li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-nav[role=navigation] li a {
-    color: #ddd;
-    text-decoration: none;
-    display: block;
-    padding: .7em;
-}
-
-nav[role=navigation] li a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-nav[role=navigation] li a:before {
-    content: "\f248";
-    font-family: FontAwesome;
-    padding-right: .6em;
-}
-
-nav[role=navigation] .dashboard a:before {
-    content: "";
-}
-
-nav[role=navigation] .write a:before {
-    content: "";
-}
-
-nav[role=navigation] .edit a:before {
-    content: "";
-}
-
-nav[role=navigation] .comments a:before {
-    content: "";
-}
-
-nav[role=navigation] .users a:before {
-    content: "";
-}
- nav[role=navigation] {
-        position: fixed;
-        width: 200px;
-        top: 75px;
-        bottom: 0px;
-    }
-
-@media screen and (min-width: 600px) {
-    header[role=banner] {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 99;
-        height: 75px;
-    }
-    header[role=banner] .utilities {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: transparent;
-        color: darkslategray;
-        width: auto;
-    }
-    header[role=banner] .utilities li {
-        display: inline-block;
-    }
-    header[role=banner] .utilities li a {
-        padding: .5em 1em;
-    }
-}
-
-    button {
+ button {
       border-radius: 5px;
         background-color: royalblue;
         text-align: center;
     }
+
     </style>
 </head>
 
 <body>
-    <nav class="nav">
-        <a class="navbar-brand" href="#">
-            <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png" width="30" height="30" class="d-inline-block align-top" alt="logo"> Financial Tracker
-        </a>
+  <div class="nav">
+     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+              
+                <a class="navbar-brand" href="index.php"> <img src="https://res.cloudinary.com/dzgbjty7c/image/upload/v1569269285/logo_zrn1mx.png">
+                  <b style="color: grey; margin-left: 20px;">Financial Tracker</b></a>
+                
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle Navigation">
 
-        <ul class="nav justify-content-center mt-3">
-            <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home
-                      <span class="sr-only">(current)</span>
-                    </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Why Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pricing.html">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="FAQ.html">FAQ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            
-            <li class="nav-item dropdown visible">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      John Doe
-                    </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="login.html">Sign Out</a>
-                    <a class="dropdown-item" href="userProfile.html">update profile</a>
-                </div>
-            </li>
-        </ul>
+                <span class="navbar-toggler-icon"></span>
+              
+              </button>
 
-    </nav>
+              <div class="collapse navbar-collapse" id="navbarcontent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.php"><b>Home</b></a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><b>Why Us</b></a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="pricing.php"><b>Pricing</b></a>
+                  </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="FAQ.html"><b>FAQ</b></a>
+                </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html"><b>Contact Us</b></a>
+                  </li>
+                
+                  <li class="nav-item dropdown visible">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        John Doe
+                          </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="login.php">Sign Out</a>
+                          <a class="dropdown-item" href="#">Update profile</a>
+                      </div>
+                  </li>
+                </ul>
+              </div>
+          </nav>
+</div>
 
     <div class="body">
     <nav role="navigation" style="margin-top: 120px; height: 250px;">
@@ -257,10 +172,12 @@ nav[role=navigation] .users a:before {
 
     <!--<button type="button" class="cancelbtn">Cancel</button>-->
 </form>
-
-<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
-        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="https://kit.fontawesome.com/85682eb992.js" crossorigin="anonymous"></script>
+        <script src="js/signup.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
 
 </body>
 </html>
