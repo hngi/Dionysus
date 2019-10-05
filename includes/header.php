@@ -61,6 +61,10 @@ if (isset($_GET['logout'])) {
             <li class="nav-item">
                 <a class="nav-link" href="pricing.php"><b>Pricing</b></a>
             </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="FAQ.html"><b>FAQ</b></a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="contact.html"><b>Contact Us</b></a>

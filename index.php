@@ -36,6 +36,10 @@
 			<li class="nav-item">
 				<a class="nav-link" href="pricing.php"><b>Pricing</b></a>
 			</li>
+			
+			<li class="nav-item align-self-center mx-md-3 mx-lg-4">
+                    <a class="nav-link" href="FAQ.html">FAQ</a>
+                	</li>
 
 			<li class="nav-item">
 				<a class="nav-link" href="contact.html"><b>Contact Us</b></a>
