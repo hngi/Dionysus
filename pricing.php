@@ -3,6 +3,7 @@ include 'includes/db/db_config.php';
 include 'includes/header.php';
 include 'includes/functions/functions.php';
 
+
 $_POST['user_id']= $_SESSION['userid'];
 
  $errors = array();
@@ -14,6 +15,7 @@ $_POST['user_id']= $_SESSION['userid'];
    
 
 if(array_key_exists('basic', $_POST)) {
+
 
 if(empty($_POST['agree'])) {
             $errors['agree'] = '<i style="color:red;">
@@ -42,7 +44,7 @@ $currency = "NGN";
 $custom_logo = "<img src='dion.png'>";
 $customer_firstname = "Subscription for Dionysus Basic";
 $txref = 'dionysus-'.$vtoken; // ensure you generate unique references per transaction.
-$PBFPubKey = "FLWPUBK-344967f4470b9315b0b5964c2417dfc0-X"; // get your public key from the dashboard.
+$PBFPubKey = "FLWPUBK-344967f4470b9315b0b5964c2417dfc0-X"; // your public key 
 $redirect_url = "https://boiling-chamber-53204.herokuapp.com/dashboard.php";
 $payment_plan = $plan_id; // this is only required for recurring payments.
 
@@ -98,7 +100,7 @@ header('Location: ' . $transaction->data->link);
   
     } 
 
-///////////////////////////////////////////
+//////////////////Thrift /////////////////////////
 
     
     if(array_key_exists('thrift', $_POST)) {
@@ -127,7 +129,7 @@ $custom_title = "Dionysus Thrift Plan";
 $amount = $amount;  
 $currency = "NGN";
 $txref = 'dionysus-'.$vtoken; 
-$PBFPubKey = "FLWPUBK-344967f4470b9315b0b5964c2417dfc0-X"; // get your public key from the dashboard.
+$PBFPubKey = "FLWPUBK-344967f4470b9315b0b5964c2417dfc0-X"; //  public key 
 $redirect_url = "https://boiling-chamber-53204.herokuapp.com/dashboard.php";
 $payment_plan = $plan_id; 
 
@@ -180,7 +182,7 @@ header('Location: ' . $transaction->data->link);
   
     } 
 
-///////////////////////////////////////////////////////
+///////////////////////Pro////////////////////////////////
     if(array_key_exists('pro', $_POST)) {
 
      if(empty($_POST['agree'])) {
@@ -204,7 +206,7 @@ $customer_email = $email;
 $custom_title = "Dionysus Pro Plan";
 $amount = $amount;  
 $currency = "NGN";
-$txref = 'dionysus-'.$vtoken; // ensure you generate unique references per transaction.
+$txref = 'dionysus-'.$vtoken; // unique references per transaction.
 $PBFPubKey = "FLWPUBK-344967f4470b9315b0b5964c2417dfc0-X"; // get your public key from the dashboard.
 $redirect_url = "https://boiling-chamber-53204.herokuapp.com/dashboard.php";
 $payment_plan = $plan_id; // this is only required for recurring payments.
@@ -383,7 +385,7 @@ header('Location: ' . $transaction->data->link);
 	</center>
 	
 	<label>By checking the box below, you have agreed to our <a href="#">terms and conditions</a></label>
-	<input type="checkbox" name="agree" value="true" > 
+	<input type="checkbox" name="agree" value="true" style="border:2px solid black;" > 
 	 </form>
 </div>
 </body>
