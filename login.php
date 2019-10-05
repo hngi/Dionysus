@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+require_once 'vendor/autoload.php';
 include './includes/db/db_config.php';
 include './includes/functions/functions.php';
 

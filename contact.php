@@ -64,7 +64,7 @@ if (array_key_exists('submit', $_POST)) {
             try {
                 global $sent;
                 $response = $sg->client->mail()->send()->post($request_body);
-                $sent = "We have received your e-mail and will respond to you in the next 24hrs";
+                header("location:ThankYou.html");
             } catch (Exception $e) {
                 echo 'Caught exception: ', $e->getMessage(), "\n";
             }
@@ -149,7 +149,7 @@ if (array_key_exists('submit', $_POST)) {
 
             <div class="row">
                     <div class="col-sm-5 mb-4">
-                        <form class="col text-center needs-validation" novalidate onsubmit="validate()" method="POST" action="ThankYou.html"> 
+                        <form class="col text-center needs-validation" action="" novalidate onsubmit="validate()" method="POST"> 
                           <div class="row d-flex justify-content-center">
                             <h3 class="white-text mb-3  font-weight-bold">Contact Us</h3>
                            </div>
@@ -191,7 +191,7 @@ if (array_key_exists('submit', $_POST)) {
                               </div>
 
                               <div class="col-md-12">
-                                <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" id="submit">Send</button>
+                              <button class="btn btn-primary col-md-12 mb-4 text-center" type="submit" name="submit" id="submit" data-toggle="modal" data-target="#exampleModal" onclick="return sendHelloEmail();">Send</button>
                               </div>
                         </form>
                     </div>
