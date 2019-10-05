@@ -189,7 +189,7 @@ if (isset($sent)) {
                     </div>
             </div>
         </div>
-
+<!--
         <footer class="cd-header flex flex-row flex-center" >
           <ul>
           <li><a href = "FAQ.html"><i class="fa fa-question" ></i> FAQs</a></li>
@@ -201,7 +201,7 @@ if (isset($sent)) {
           <li><a href = "contact.php"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
           
           </ul>
-        </footer>
+        </footer>-->
         <script src="js/signup.js"></script>
         <script src="https://kit.fontawesome.com/85682eb992.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

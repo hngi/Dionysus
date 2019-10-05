@@ -178,6 +178,7 @@ if(array_key_exists('submit', $_POST)){
                     </div>  
             </div>
         </div>
+        <!--
         <footer class="cd-header flex flex-row flex-center" >
 	<ul>
 	<li><a href = "FAQ.html"><i class="fa fa-question" ></i> FAQs</a></li>
@@ -189,7 +190,7 @@ if(array_key_exists('submit', $_POST)){
 	<li><a href = "contact.html"> <i class="fa fa-book" aria-hidden="true"></i> contact us</a></li>
 	
 	</ul>
-  </footer>
+  </footer>-->
 
         <script src="js/signup.js"></script>
         <script src="https://kit.fontawesome.com/85682eb992.js" crossorigin="anonymous"></script>
