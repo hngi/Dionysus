@@ -127,7 +127,7 @@ if (array_key_exists('submit', $_POST)) {
                     <a class="nav-link" href="pricing.php"><b>Pricing</b></a>
                     </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="FAQ.html"><b>FAQ</b></a>
+                    <a class="nav-link" href="FAQ.html"><b>FAQs</b></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#"><b>Contact Us</b></a>
