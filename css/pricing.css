@@ -19,12 +19,51 @@ body{
 }*/
 
 
-.basic :hover			{
-							width: 20%;
-							cursor: pointer;
-}
+
 
 h2					{
 							margin-bottom: -19px;
+}.table-striped{
+width: 85%;
+margin: 0 auto !important;
+}
+.text-center{
+	background-color: #7d7d7d;
+	color: #D7D7D7;
 }
 
+.text-center:hover{
+	background-color: darkblue;
+	color: #D7D7D7;
+}
+.footer button{
+	background-color: #7d7d7d;
+	color: #D7D7D7;
+}
+.footer button:hover{
+	background-color: blue;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+*/
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {  
+    h1 {font-size: 16px;}
+  }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {  
+    .class-name {font-size: 30px;}
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) { 
+    .class-name {font-size: 40px;}
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {  
+    .class-name {font-size: 48px;}
+  }
+
+  /*
