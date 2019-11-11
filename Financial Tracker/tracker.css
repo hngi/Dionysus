@@ -1,0 +1,59 @@
+body{
+	background-color: #696969;
+}
+
+.navbar-brand{
+/*	position: absolute;
+width: 24px;
+height: 12px;
+left: 71px;
+top: 20px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;*/
+/*display: flex;
+align-items: center;
+text-align: center;*/
+
+color: rgba(3, 3, 3, 0.59);
+
+}
+
+
+
+
+.nav-item{
+	
+
+font-family: Roboto;
+font-style: normal;
+font-weight: lighter;
+font-size: 18px;
+line-height: 20px;
+margin-right: 60px;
+color: rgba(3, 3, 3, 0.59);
+float: right;
+ text-align:left !important;
+
+}
+
+.mainDiv{
+	margin: 18em auto;
+	text-align: left;
+	font-weight: bold;
+	line-height: 2px;
+	letter-spacing: 2px;
+
+}
+
+
+.btn{
+  background-color: #696969; 
+  height: 60px;
+  font-weight: bold;
+  border:1px solid blue;
+ 
+}
